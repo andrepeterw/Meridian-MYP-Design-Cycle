@@ -1,6 +1,14 @@
 import { forwardRef } from "react";
-import type { CriterionContent } from "@/content/types";
+import type { CriterionContent, CriterionKey } from "@/content/types";
 import { StrandCard } from "./StrandCard";
+import { TermText } from "./TermText";
+
+const headingText: Record<CriterionKey, string> = {
+  A: "Inquiring and {{analysing}}",
+  B: "{{Developing}} ideas",
+  C: "{{Creating}} the solution",
+  D: "{{Evaluating}}",
+};
 
 export const CriterionSection = forwardRef<HTMLElement, { criterion: CriterionContent }>(
   function CriterionSection({ criterion }, ref) {
@@ -24,7 +32,7 @@ export const CriterionSection = forwardRef<HTMLElement, { criterion: CriterionCo
               id={`criterion-${criterion.key}-heading`}
               className="mt-4 text-2xl font-bold text-[var(--ink)] md:text-3xl"
             >
-              Criterion {criterion.key}: {criterion.name}
+              <TermText text={`Criterion ${criterion.key}: ${headingText[criterion.key]}`} />
             </h2>
           </header>
 

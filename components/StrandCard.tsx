@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import type { Strand } from "@/content/types";
+import { TermText } from "./TermText";
 
 export function StrandCard({
   strand,
@@ -50,21 +51,27 @@ export function StrandCard({
           >
             {strand.id}
           </span>
-          <h3 className="text-lg font-semibold text-[var(--ink)]">{strand.title}</h3>
+          <h3 className="text-lg font-semibold text-[var(--ink)]">
+            <TermText text={strand.title} />
+          </h3>
         </div>
 
-        <p className="mb-4 leading-relaxed text-[var(--ink)]">{strand.instructions}</p>
+        <p className="mb-4 leading-relaxed text-[var(--ink)]">
+          <TermText text={strand.instructions} />
+        </p>
 
         <p className="mb-4 rounded-lg bg-black/[0.035] p-3 text-sm leading-relaxed text-[var(--ink)]">
           <strong>What strong work looks like: </strong>
-          {strand.rubricSummary}
+          <TermText text={strand.rubricSummary} />
         </p>
 
         <div className="mb-4 space-y-2 text-sm leading-relaxed text-black/70">
-          <p>{strand.citation.framing}</p>
+          <p>
+            <TermText text={strand.citation.framing} />
+          </p>
           {strand.citation.counterpoint && (
             <p className="border-l-2 border-black/10 pl-3 italic text-black/60">
-              {strand.citation.counterpoint}
+              <TermText text={strand.citation.counterpoint} />
             </p>
           )}
         </div>
@@ -73,7 +80,9 @@ export function StrandCard({
           <span className="font-semibold" style={{ color }}>
             Reflect:{" "}
           </span>
-          <span className="text-[var(--ink)]">{strand.reflectionQuestion}</span>
+          <span className="text-[var(--ink)]">
+            <TermText text={strand.reflectionQuestion} />
+          </span>
         </p>
       </div>
     </motion.article>

@@ -5,7 +5,7 @@ export const grade6: GradeContent = {
   grade: 6,
   mypYear: "MYP Year 1",
   tagline:
-    "A teacher-led challenge you're solving for yourself, one step at a time.",
+    "A teacher led challenge you're solving for yourself, one step at a time.",
   criteria: {
     A: {
       key: "A",
@@ -13,11 +13,11 @@ export const grade6: GradeContent = {
       strands: [
         {
           id: "A.i",
-          title: "Explain and justify the need for a solution",
+          title: "{{Explain}} and {{justify}} the need for a solution",
           instructions:
             "Look at the design challenge your teacher gave you. Finish these sentences in your Process Journal: \"The problem is ___.\" \"This matters because ___.\" \"If nobody solved it, ___ would happen.\"",
           rubricSummary:
-            "Strong work clearly states what the problem is and gives at least one real reason it's worth solving — not just \"because it's the assignment.\"",
+            "Strong work clearly {{states}} what the problem is and gives at least one real reason it's worth solving, not just \"because it's the assignment.\"",
           citation: {
             refId: "ritchhart2008",
             framing:
@@ -28,11 +28,11 @@ export const grade6: GradeContent = {
         },
         {
           id: "A.ii",
-          title: "Identify and prioritize research",
+          title: "{{Identify}} and {{prioritize}} research",
           instructions:
-            "List three things you'd need to find out before you could solve this problem. Circle the one you think is most important to learn first, and say why.",
+            "{{List}} three things you'd need to find out before you could solve this problem. Circle the one you think is most important to learn first, and say why.",
           rubricSummary:
-            "Strong work lists a few real things worth researching and picks out which one matters most, instead of listing everything with no order.",
+            "Strong work {{lists}} a few real things worth researching and picks out which one matters most, instead of {{listing}} everything with no order.",
           citation: {
             refId: "dang2025",
             framing:
@@ -43,21 +43,21 @@ export const grade6: GradeContent = {
         },
         {
           id: "A.iii",
-          title: "Analyse existing products",
+          title: "{{Analyse}} existing products",
           instructions:
             "Find one object, app, or invention that already tries to solve a similar problem. Look closely and write down three things you notice about how it works or looks.",
           rubricSummary:
-            "Strong work describes real, specific details about the existing product, not just \"it's good\" or \"it's bad.\"",
+            "Strong work {{describes}} real, specific details about the existing product, not just \"it's good\" or \"it's bad.\"",
           citation: {
             refId: "ritchhart2008",
             framing:
-              "A thinking routine called See-Think-Wonder (Ritchhart & Perkins, 2008) says that looking closely before judging helps you notice things you'd otherwise miss.",
+              "A thinking routine called See Think Wonder (Ritchhart & Perkins, 2008) says that looking closely before judging helps you notice things you'd otherwise miss.",
           },
           reflectionQuestion: "What did you notice about this product that surprised you?",
         },
         {
           id: "A.iv",
-          title: "Develop a design brief",
+          title: "{{Develop}} a design brief",
           instructions:
             "Put it all together in one short paragraph: what the problem is, what you found out, and what you noticed from the product you studied. This paragraph is your design brief.",
           rubricSummary:
@@ -78,35 +78,35 @@ export const grade6: GradeContent = {
       strands: [
         {
           id: "B.i",
-          title: "Develop a design specification",
+          title: "{{Develop}} a design specification",
           instructions:
             "Make a checklist of at least three things your solution must do to count as successful. Keep each one short and clear enough that a friend could check it off.",
           rubricSummary:
-            "Strong work lists specific, checkable requirements — \"it must hold 500g without breaking\" rather than \"it should be strong.\"",
+            "Strong work {{lists}} specific, checkable requirements, \"it must hold 500g without breaking\" rather than \"it should be strong.\"",
           citation: {
             refId: "condliffe2017",
             framing:
-              "Research on project-based learning (Condliffe et al., 2017) found that students do better work when they know exactly what \"success\" looks like before they start building.",
+              "Research on project based learning (Condliffe et al., 2017) found that students do better work when they know exactly what \"success\" looks like before they start building.",
           },
           reflectionQuestion: "Which item on your checklist will be hardest to actually achieve?",
         },
         {
           id: "B.ii",
-          title: "Develop a range of feasible design ideas",
+          title: "{{Develop}} a range of feasible design ideas",
           instructions:
             "Sketch two or three different ideas that could solve the problem. They don't have to be perfect, just different from each other.",
           rubricSummary:
-            "Strong work shows more than one real idea, drawn or labeled clearly enough that someone else could understand it without you explaining.",
+            "Strong work shows more than one real idea, drawn or labeled clearly enough that someone else could understand it without you {{explaining}}.",
           citation: {
             refId: "hui2023",
             framing:
-              "A study on game-based learning (Hui & Mahmud, 2023) found that playful, low-pressure idea generation — trying lots of things without fear of being wrong — helps students come up with better ideas.",
+              "A study on game based learning (Hui & Mahmud, 2023) found that treating idea generation as playful and low pressure, trying lots of things without fear of being wrong, helps students come up with better ideas.",
           },
           reflectionQuestion: "Which of your ideas surprised you the most, even if it's not your favorite?",
         },
         {
           id: "B.iii",
-          title: "Present the chosen design and justify its selection",
+          title: "{{Present}} the chosen design and {{justify}} its selection",
           instructions:
             "Pick your favorite idea. Write two sentences: what it is, and one reason it's better than your other ideas.",
           rubricSummary:
@@ -120,7 +120,7 @@ export const grade6: GradeContent = {
         },
         {
           id: "B.iv",
-          title: "Develop planning drawings and diagrams",
+          title: "{{Develop}} planning drawings and diagrams",
           instructions:
             "Draw your chosen design one more time, but bigger and labeled. Add arrows or notes showing size, materials, or how the parts fit together.",
           rubricSummary:
@@ -128,7 +128,7 @@ export const grade6: GradeContent = {
           citation: {
             refId: "condliffe2017",
             framing:
-              "The same project-based learning research (Condliffe et al., 2017) found that students who plan out the details before building run into fewer problems once they start.",
+              "The same project based learning research (Condliffe et al., 2017) found that students who plan out the details before building run into fewer problems once they start.",
           },
           reflectionQuestion: "If you handed this drawing to a classmate, could they build your idea without asking you questions?",
         },
@@ -140,11 +140,11 @@ export const grade6: GradeContent = {
       strands: [
         {
           id: "C.i",
-          title: "Construct a logical plan",
+          title: "{{Construct}} a logical plan",
           instructions:
-            "List the steps you'll take to build your solution, in order. Next to each step, write roughly how long it will take and what materials you need.",
+            "{{List}} the steps you'll take to build your solution, in order. Next to each step, write roughly how long it will take and what materials you need.",
           rubricSummary:
-            "Strong work lists steps in the right order with realistic time and materials — a classmate could follow it without getting lost.",
+            "Strong work {{lists}} steps in the right order with realistic time and materials, a classmate could follow it without getting lost.",
           citation: {
             refId: "beasley2022",
             framing:
@@ -154,9 +154,9 @@ export const grade6: GradeContent = {
         },
         {
           id: "C.ii",
-          title: "Demonstrate technical skills",
+          title: "{{Demonstrate}} technical skills",
           instructions:
-            "As you build, practice the specific skill your project needs — cutting, coding, sewing, soldering, whatever it is — carefully, and ask for help before you make a mistake permanent.",
+            "As you build, practice the specific skill your project needs (cutting, coding, sewing, soldering, whatever it is) carefully, and ask for help before you make a mistake permanent.",
           rubricSummary:
             "Strong work shows careful, controlled use of tools and materials, not rushed or careless.",
           citation: {
@@ -168,7 +168,7 @@ export const grade6: GradeContent = {
         },
         {
           id: "C.iii",
-          title: "Follow the plan to create the solution",
+          title: "Follow the plan to {{create}} the solution",
           instructions:
             "Build your solution by following your plan from C.i. If you skip a step or change something, write it down as you go.",
           rubricSummary:
@@ -182,15 +182,15 @@ export const grade6: GradeContent = {
         },
         {
           id: "C.iv",
-          title: "Justify changes made to the design",
+          title: "{{Justify}} changes made to the design",
           instructions:
-            "Look back at your notes. Pick one change you made while building, and explain in one sentence why you made it.",
+            "Look back at your notes. Pick one change you made while building, and {{explain}} in one sentence why you made it.",
           rubricSummary:
             "Strong work names a real change and gives an honest reason for it, even if the reason is \"it broke.\"",
           citation: {
             refId: "meyerrosegordon2014",
             framing:
-              "The same UDL research (Meyer, Rose, & Gordon, 2014) treats changing your plan mid-project as a normal, expected part of making, not a mistake to hide.",
+              "The same UDL research (Meyer, Rose, & Gordon, 2014) treats changing your plan partway through a project as a normal, expected part of making, not a mistake to hide.",
           },
           reflectionQuestion: "Do you think this change made your solution better, worse, or just different?",
         },
@@ -202,7 +202,7 @@ export const grade6: GradeContent = {
       strands: [
         {
           id: "D.i",
-          title: "Design testing methods",
+          title: "{{Design}} testing methods",
           instructions:
             "Think of one simple test you could run on your solution. Decide what you'll measure (like how much weight it holds, or how long it lasts) and how you'll write the results down.",
           rubricSummary:
@@ -210,13 +210,13 @@ export const grade6: GradeContent = {
           citation: {
             refId: "ali2023",
             framing:
-              "Research on redesigning how schools check student work (Ali & Knowles, 2023) argues that testing something in a real, hands-on way teaches more than just describing whether it should work.",
+              "Research on redesigning how schools check student work (Ali & Knowles, 2023) argues that testing something in a real, hands on way teaches more than just describing whether it should work.",
           },
           reflectionQuestion: "What will your test actually tell you that just looking at the solution wouldn't?",
         },
         {
           id: "D.ii",
-          title: "Evaluate the success of the solution",
+          title: "{{Evaluate}} the success of the solution",
           instructions:
             "Go back to your checklist from B.i. For each item, write whether your solution passed, and how you know.",
           rubricSummary:
@@ -224,13 +224,13 @@ export const grade6: GradeContent = {
           citation: {
             refId: "ritchhart2008",
             framing:
-              "A thinking routine called Connect-Extend-Challenge (Ritchhart & Perkins, 2008) suggests checking new results against what you expected, to see what actually matches up.",
+              "A thinking routine called Connect Extend Challenge (Ritchhart & Perkins, 2008) suggests checking new results against what you expected, to see what actually matches up.",
           },
           reflectionQuestion: "Which checklist item are you proudest of meeting?",
         },
         {
           id: "D.iii",
-          title: "Explain how the solution could be improved",
+          title: "{{Explain}} how the solution could be improved",
           instructions:
             "Pick the one part of your solution that worked the least well. Write one specific idea for how you'd fix it next time.",
           rubricSummary:
@@ -238,23 +238,23 @@ export const grade6: GradeContent = {
           citation: {
             refId: "ritchhart2008",
             framing:
-              "The same thinking routine (Ritchhart & Perkins, 2008) asks you to challenge your own work — to look for what still doesn't sit right, on purpose.",
+              "The same thinking routine (Ritchhart & Perkins, 2008) asks you to challenge your own work by looking for what still doesn't sit right, on purpose.",
           },
           reflectionQuestion: "Why didn't you fix this weak spot before you finished building?",
         },
         {
           id: "D.iv",
-          title: "Explain the impact of the solution",
+          title: "{{Explain}} the impact of the solution",
           instructions:
             "Think about the person or people your solution was for. Write one or two sentences about how it would actually change their day if they used it.",
           rubricSummary:
-            "Strong work describes a believable effect on a real person or group, connected back to the problem from A.i.",
+            "Strong work {{describes}} a believable effect on a real person or group, connected back to the problem from A.i.",
           citation: {
             refId: "alpaydin2022",
             framing:
-              "Writers on education theory (Alpaydin & Demirli, 2022) argue that the point of evaluating work isn't just to grade it, but to understand what real difference it makes.",
+              "Writers on education theory (Alpaydin & Demirli, 2022) argue that the point of {{evaluating}} work isn't just to grade it, but to understand what real difference it makes.",
           },
-          reflectionQuestion: "Would the person you designed this for agree with what you just wrote?",
+          reflectionQuestion: "Would the person you {{designed}} this for agree with what you just wrote?",
         },
       ],
     },

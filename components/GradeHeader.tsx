@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { GradeContent } from "@/content/types";
 import { criterionOrder } from "@/content/theme";
 import { gradeList } from "@/content/grades";
+import { TermText } from "./TermText";
 
 export function GradeHeader({ content }: { content: GradeContent }) {
   return (
@@ -13,7 +14,9 @@ export function GradeHeader({ content }: { content: GradeContent }) {
         <h1 className="mt-2 text-4xl font-bold text-[var(--ink)] md:text-5xl">
           Grade {content.grade}
         </h1>
-        <p className="mx-auto mt-3 max-w-xl text-[var(--ink)]/80">{content.tagline}</p>
+        <p className="mx-auto mt-3 max-w-xl text-[var(--ink)]/80">
+          <TermText text={content.tagline} />
+        </p>
 
         <nav aria-label="Jump to criterion" className="mt-6 flex flex-wrap justify-center gap-2">
           {criterionOrder.map((key) => (

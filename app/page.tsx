@@ -5,6 +5,7 @@ import { references } from "@/content/references";
 import { gradeList } from "@/content/grades";
 import { criterionOrder, criterionTheme } from "@/content/theme";
 import { MeridianMark } from "@/components/MeridianMark";
+import { DesignCycleWheel } from "@/components/DesignCycleWheel";
 
 export const metadata: Metadata = {
   title: "Meridian: The MYP Design Cycle Route",
@@ -26,6 +27,10 @@ export default function HomePage() {
         <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[var(--ink)]/60">
           {homeContent.whyThisExists}
         </p>
+      </section>
+
+      <section className="mx-auto max-w-md px-6 pb-16">
+        <DesignCycleWheel className="h-auto w-full" />
       </section>
 
       <section id="grades" className="mx-auto max-w-4xl scroll-mt-20 px-6 pb-20">
