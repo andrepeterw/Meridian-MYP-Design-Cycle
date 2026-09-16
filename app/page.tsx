@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { homeContent } from "@/content/home";
 import { references } from "@/content/references";
 import { gradeList } from "@/content/grades";
-import { criterionOrder, criterionTheme, gradeAccent } from "@/content/theme";
+import { AISL, criterionTheme, gradeAccent } from "@/content/theme";
 import { MeridianMark } from "@/components/MeridianMark";
 import { DesignCycleWheel } from "@/components/DesignCycleWheel";
 import { EmphasisText } from "@/components/EmphasisText";
@@ -30,8 +30,11 @@ export default function HomePage() {
         </p>
       </section>
 
-      <section className="mx-auto max-w-md px-6 pb-16">
+      <section className="mx-auto max-w-[515px] overflow-x-hidden px-6 pb-16 text-center">
         <DesignCycleWheel className="h-auto w-full" />
+        <p className="mt-4 text-sm text-[var(--ink)]/50">
+          Hover, tap, or tab to a quarter of the wheel for what it means.
+        </p>
       </section>
 
       <section id="grades" className="mx-auto max-w-4xl scroll-mt-20 px-6 pb-20">
@@ -56,11 +59,13 @@ export default function HomePage() {
           ))}
           <Link
             href="/process-journal"
-            className="col-span-2 flex flex-col items-center justify-center rounded-2xl border border-black/5 px-4 py-8 text-center shadow-sm transition hover:shadow-md sm:col-span-1 md:col-span-5"
-            style={{ background: criterionTheme.A.tint }}
+            style={{ background: criterionTheme.A.tint, ["--pj-color" as string]: AISL.grey }}
+            className="group col-span-2 flex flex-col items-center justify-center rounded-2xl border border-black/5 px-4 py-8 text-center shadow-sm transition-colors duration-200 hover:bg-[var(--pj-color)] hover:shadow-md sm:col-span-1 md:col-span-5"
           >
-            <span className="text-lg font-semibold text-[var(--ink)]">Process Journal guide</span>
-            <span className="mt-1 text-sm text-[var(--ink)]/60">
+            <span className="text-lg font-semibold text-[var(--ink)] transition-colors duration-200 group-hover:text-white">
+              Process Journal guide
+            </span>
+            <span className="mt-1 text-sm text-[var(--ink)]/60 transition-colors duration-200 group-hover:text-white/80">
               Set up and maintain your journal in Google Sites
             </span>
           </Link>
@@ -77,25 +82,6 @@ export default function HomePage() {
             </li>
           ))}
         </ol>
-      </section>
-
-      <section className="mx-auto max-w-2xl px-6 pb-20">
-        <h2 className="mb-6 text-2xl font-bold text-[var(--ink)]">
-          What the four criteria mean
-        </h2>
-        <ul className="space-y-3">
-          {criterionOrder.map((key) => (
-            <li key={key} className="flex items-start gap-3">
-              <span
-                className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
-                style={{ background: criterionTheme[key].color }}
-              >
-                {key}
-              </span>
-              <span className="text-[var(--ink)]/85">{criterionTheme[key].name}</span>
-            </li>
-          ))}
-        </ul>
       </section>
 
       <section className="mx-auto max-w-2xl px-6 pb-20">
@@ -126,7 +112,7 @@ export default function HomePage() {
                     {" "}
                     <a
                       href={ref.url}
-                      className="text-[var(--ink)] underline underline-offset-2"
+                      className="text-[var(--ink)] underline underline-offset-2 break-all"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

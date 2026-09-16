@@ -94,6 +94,13 @@ export default function ProcessJournalPage() {
             {processJournalContent.exemplars.disclaimer}
           </div>
 
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-bold text-[var(--ink)]">
+            {processJournalContent.exemplars.unitName}
+          </p>
+          <p className="mx-auto mb-2 max-w-2xl text-center text-sm text-[var(--ink)]/70">
+            Same problem, same Criterion A research, two different solutions.
+          </p>
+
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {[processJournalContent.exemplars.product, processJournalContent.exemplars.digital].map(
               (exemplar) => (
