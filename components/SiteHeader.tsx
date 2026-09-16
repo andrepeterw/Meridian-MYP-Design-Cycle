@@ -11,7 +11,7 @@ export function SiteHeader() {
         </Link>
         <nav aria-label="Primary" className="flex items-center gap-4 text-sm">
           <Link href="/#grades" className="text-[var(--ink)]/80 hover:text-[var(--ink)]">
-            Grades
+            Grade Levels
           </Link>
           <Link href="/process-journal" className="text-[var(--ink)]/80 hover:text-[var(--ink)]">
             Process Journal
