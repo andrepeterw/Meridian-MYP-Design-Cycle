@@ -7,6 +7,7 @@ import type { CriterionKey, GradeContent } from "@/content/types";
 import { criterionOrder } from "@/content/theme";
 import { CriterionSection } from "./CriterionSection";
 import { ConnectorLine } from "./ConnectorLine";
+import { LaunchButton } from "./LaunchButton";
 import { lerpColor } from "@/lib/color";
 
 if (typeof window !== "undefined") {
@@ -74,6 +75,16 @@ export function DesignCycleRoute({ content }: { content: GradeContent }) {
           }}
         />
       ))}
+
+      <div className="relative z-10 py-20">
+        <span
+          data-strand-anchor
+          aria-hidden="true"
+          className="absolute left-1/2 top-8 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full"
+          style={{ background: "var(--ink)" }}
+        />
+        <LaunchButton />
+      </div>
     </div>
   );
 }

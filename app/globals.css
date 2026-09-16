@@ -30,3 +30,99 @@ body {
   background-color: #fef3c7;
   border-color: #f2a93c;
 }
+
+/* Launch button and celebration */
+
+.launch-button {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(180deg, #f0f0f0 0%, #bcbcbc 45%, #8a8a8a 62%, #dcdcdc 100%);
+  box-shadow:
+    0 12px 22px rgba(0, 0, 0, 0.25),
+    inset 0 -6px 10px rgba(0, 0, 0, 0.25),
+    inset 0 4px 6px rgba(255, 255, 255, 0.7);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+}
+
+.launch-button:hover {
+  filter: brightness(1.04);
+}
+
+.launch-button:active {
+  transform: translateY(3px) scale(0.97);
+  box-shadow:
+    0 5px 10px rgba(0, 0, 0, 0.25),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.25),
+    inset 0 2px 4px rgba(255, 255, 255, 0.6);
+}
+
+.launch-button__top {
+  position: absolute;
+  inset: 9px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: 0.06em;
+  background: radial-gradient(circle at 35% 28%, #ff9086 0%, #e6453f 45%, #ad1c1c 100%);
+  box-shadow:
+    inset 0 7px 10px rgba(255, 255, 255, 0.55),
+    inset 0 -10px 16px rgba(0, 0, 0, 0.35);
+}
+
+.launch-button:active .launch-button__top {
+  box-shadow:
+    inset 0 3px 6px rgba(255, 255, 255, 0.4),
+    inset 0 -6px 10px rgba(0, 0, 0, 0.35);
+}
+
+@keyframes launch-rocket-fly {
+  0% {
+    transform: translateY(0) rotate(var(--wobble, 0deg));
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-135vh) rotate(var(--wobble, 0deg));
+    opacity: 0;
+  }
+}
+
+@keyframes launch-confetti-fly {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--drift, 0px), -125vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.launch-rocket {
+  position: absolute;
+  bottom: -10%;
+  animation-name: launch-rocket-fly;
+  animation-timing-function: cubic-bezier(0.3, 0, 0.7, 1);
+  animation-fill-mode: forwards;
+  will-change: transform, opacity;
+}
+
+.launch-confetti {
+  position: absolute;
+  bottom: -5%;
+  border-radius: 1px;
+  animation-name: launch-confetti-fly;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  will-change: transform, opacity;
+}
