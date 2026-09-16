@@ -3,9 +3,10 @@ import type { Metadata } from "next";
 import { homeContent } from "@/content/home";
 import { references } from "@/content/references";
 import { gradeList } from "@/content/grades";
-import { criterionOrder, criterionTheme } from "@/content/theme";
+import { criterionOrder, criterionTheme, gradeAccent } from "@/content/theme";
 import { MeridianMark } from "@/components/MeridianMark";
 import { DesignCycleWheel } from "@/components/DesignCycleWheel";
+import { EmphasisText } from "@/components/EmphasisText";
 
 export const metadata: Metadata = {
   title: "Meridian: The MYP Design Cycle Route",
@@ -42,10 +43,15 @@ export default function HomePage() {
             <Link
               key={g}
               href={`/grade-${g}`}
-              className="flex flex-col items-center justify-center rounded-2xl border border-black/5 bg-white/90 px-4 py-8 text-center shadow-sm transition hover:shadow-md"
+              style={{ ["--grade-color" as string]: gradeAccent[g] }}
+              className="group flex flex-col items-center justify-center rounded-2xl border border-black/5 bg-white/90 px-4 py-8 text-center shadow-sm transition-colors duration-200 hover:border-[var(--grade-color)] hover:bg-[var(--grade-color)] hover:shadow-md"
             >
-              <span className="text-3xl font-bold text-[var(--ink)]">{g}</span>
-              <span className="mt-1 text-sm text-[var(--ink)]/60">Grade {g}</span>
+              <span className="text-3xl font-bold text-[var(--ink)] transition-colors duration-200 group-hover:text-white">
+                {g}
+              </span>
+              <span className="mt-1 text-sm text-[var(--ink)]/60 transition-colors duration-200 group-hover:text-white/80">
+                Grade {g}
+              </span>
             </Link>
           ))}
           <Link
@@ -114,9 +120,10 @@ export default function HomePage() {
             .sort((a, b) => a.apa.localeCompare(b.apa))
             .map((ref) => (
               <li key={ref.id} className="pl-8 -indent-8">
-                {ref.url ? (
+                <EmphasisText text={ref.apa} />
+                {ref.url && (
                   <>
-                    {ref.apa}{" "}
+                    {" "}
                     <a
                       href={ref.url}
                       className="text-[var(--ink)] underline underline-offset-2"
@@ -126,8 +133,6 @@ export default function HomePage() {
                       {ref.url}
                     </a>
                   </>
-                ) : (
-                  ref.apa
                 )}
               </li>
             ))}

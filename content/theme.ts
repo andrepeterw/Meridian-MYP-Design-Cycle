@@ -1,4 +1,4 @@
-import type { CriterionKey } from "./types";
+import type { CriterionKey, Grade } from "./types";
 
 export const AISL = {
   blue: "#0B5478",
@@ -22,3 +22,12 @@ export const criterionTheme: Record<
 };
 
 export const criterionOrder: CriterionKey[] = ["A", "B", "C", "D"];
+
+/** One brand color per grade, used for the grade picker's hover state on the home page. */
+export const gradeAccent: Record<Grade, string> = {
+  6: AISL.blue,
+  7: AISL.orange,
+  8: AISL.green,
+  9: AISL.red,
+  10: AISL.indigo,
+};
