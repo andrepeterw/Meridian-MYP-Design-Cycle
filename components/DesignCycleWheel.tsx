@@ -18,20 +18,23 @@ const HITZONES: Record<CriterionKey, string> = {
   D: "M 20 300 A 280 280 0 0 1 300 20 L 300 174 A 126 126 0 0 0 174 300 Z",
 };
 
+// Leader lines run from the wheel's edge out to the exact corner the callout
+// is anchored to, so the two visually meet with no gap.
 const LEADER_LINES: Record<CriterionKey, { x1: number; y1: number; x2: number; y2: number }> = {
-  A: { x1: 492.33, y1: 107.67, x2: 540.42, y2: 59.58 },
-  B: { x1: 492.33, y1: 492.33, x2: 540.42, y2: 540.42 },
-  C: { x1: 107.67, y1: 492.33, x2: 59.58, y2: 540.42 },
-  D: { x1: 107.67, y1: 107.67, x2: 59.58, y2: 59.58 },
+  A: { x1: 492.33, y1: 107.67, x2: 600, y2: 0 },
+  B: { x1: 492.33, y1: 492.33, x2: 600, y2: 600 },
+  C: { x1: 107.67, y1: 492.33, x2: 0, y2: 600 },
+  D: { x1: 107.67, y1: 107.67, x2: 0, y2: 0 },
 };
 
-// Callout position, as a percentage of the wheel's bounding box, plus the CSS
-// transform that anchors the callout's corner to that point.
-const CALLOUT_POSITION: Record<CriterionKey, { left: string; top: string; transform: string }> = {
-  A: { left: "90.07%", top: "9.93%", transform: "translate(0%, -100%)" },
-  B: { left: "90.07%", top: "90.07%", transform: "translate(0%, 0%)" },
-  C: { left: "9.93%", top: "90.07%", transform: "translate(-100%, 0%)" },
-  D: { left: "9.93%", top: "9.93%", transform: "translate(-100%, -100%)" },
+// Each callout is anchored flush against the wheel's own corner (never past
+// its outer edge, so it can never overflow the page) and grows outward from
+// there via the transform.
+const CALLOUT_POSITION: Record<CriterionKey, React.CSSProperties> = {
+  A: { right: 0, top: 0, transform: "translateY(calc(-100% - 10px))" },
+  B: { right: 0, bottom: 0, transform: "translateY(calc(100% + 10px))" },
+  C: { left: 0, bottom: 0, transform: "translateY(calc(100% + 10px))" },
+  D: { left: 0, top: 0, transform: "translateY(calc(-100% - 10px))" },
 };
 
 const CRITERIA: CriterionKey[] = ["A", "B", "C", "D"];
@@ -167,11 +170,9 @@ export function DesignCycleWheel({ className }: { className?: string }) {
         <div
           key={key}
           aria-hidden="true"
-          className="pointer-events-none absolute w-40 rounded-lg border bg-white/95 p-2.5 text-xs shadow-md transition-opacity duration-150 sm:w-48"
+          className="pointer-events-none absolute w-36 max-w-[70%] rounded-lg border bg-white/95 p-2.5 text-xs shadow-md transition-opacity duration-150 sm:w-48"
           style={{
-            left: CALLOUT_POSITION[key].left,
-            top: CALLOUT_POSITION[key].top,
-            transform: CALLOUT_POSITION[key].transform,
+            ...CALLOUT_POSITION[key],
             borderColor: criterionTheme[key].color,
             opacity: active === key ? 1 : 0,
             zIndex: active === key ? 10 : -1,

@@ -30,7 +30,7 @@ export default function HomePage() {
         </p>
       </section>
 
-      <section className="mx-auto max-w-[515px] overflow-x-hidden px-6 pb-16 text-center">
+      <section className="mx-auto max-w-[515px] px-6 pb-16 text-center">
         <DesignCycleWheel className="h-auto w-full" />
         <p className="mt-4 text-sm text-[var(--ink)]/50">
           Hover, tap, or tab to a quarter of the wheel for what it means.
