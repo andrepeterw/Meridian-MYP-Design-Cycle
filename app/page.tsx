@@ -23,7 +23,16 @@ export default function HomePage() {
           {homeContent.siteTitle}
         </h1>
         <p className="mx-auto mt-5 max-w-xl leading-relaxed text-[var(--ink)]/80">
-          {homeContent.intro}
+          Meridian is a map for the{" "}
+          <a
+            href={homeContent.introLinkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2"
+          >
+            {homeContent.introLinkText}
+          </a>
+          {homeContent.introAfterLink}
         </p>
         <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[var(--ink)]/60">
           {homeContent.whyThisExists}
@@ -60,12 +69,10 @@ export default function HomePage() {
           <Link
             href="/process-journal"
             style={{ background: criterionTheme.A.tint, ["--pj-color" as string]: AISL.grey }}
-            className="group col-span-2 flex flex-col items-center justify-center rounded-2xl border border-black/5 px-4 py-8 text-center shadow-sm transition-colors duration-200 hover:bg-[var(--pj-color)] hover:shadow-md sm:col-span-1 md:col-span-5"
+            className="col-span-2 flex flex-col items-center justify-center rounded-2xl border border-black/5 px-4 py-8 text-center shadow-sm ring-2 ring-transparent transition-all duration-200 hover:shadow-md hover:ring-[var(--pj-color)] sm:col-span-1 md:col-span-5"
           >
-            <span className="text-lg font-semibold text-[var(--ink)] transition-colors duration-200 group-hover:text-white">
-              Process Journal guide
-            </span>
-            <span className="mt-1 text-sm text-[var(--ink)]/60 transition-colors duration-200 group-hover:text-white/80">
+            <span className="text-lg font-semibold text-[var(--ink)]">Process Journal guide</span>
+            <span className="mt-1 text-sm text-[var(--ink)]/60">
               Set up and maintain your journal in Google Sites
             </span>
           </Link>
@@ -126,8 +133,19 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-2xl px-6 pb-24 text-center text-sm text-[var(--ink)]/60">
-        <p>{homeContent.credits.designer}</p>
+        <p>
+          <a
+            href={homeContent.credits.designerLinkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2"
+          >
+            {homeContent.credits.designerLinkText}
+          </a>
+          {homeContent.credits.designerAfterLink}
+        </p>
         <p>{homeContent.credits.reviewer}</p>
+        <p>{homeContent.credits.year}</p>
       </section>
     </main>
   );

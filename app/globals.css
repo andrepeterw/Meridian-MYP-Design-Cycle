@@ -20,17 +20,6 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-[id^="term-"] {
-  scroll-margin-top: 6rem;
-  transition: background-color 0.4s ease, border-color 0.4s ease;
-}
-
-[id^="term-"]:target,
-[id^="term-"].command-term-highlight {
-  background-color: #fef3c7;
-  border-color: #f2a93c;
-}
-
 /* Launch button and celebration */
 
 .launch-button {

@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { usePrefersReducedMotion } from "@/lib/reducedMotion";
 
 const CONFETTI_COLORS = ["#0B5478", "#F0782A", "#0B7A50", "#D9433F", "#3A3182", "#F2A93C"];
-const ROCKET_COUNT = 10;
+const ROCKET_COUNT = 15;
 const CONFETTI_COUNT = 46;
 const CELEBRATION_MS = 4200;
 const SCROLL_MS = 3200;
@@ -31,7 +31,7 @@ function makeRockets(): Rocket[] {
     left: 4 + Math.random() * 92,
     duration: 2.6 + Math.random() * 1.4,
     delay: Math.random() * 0.7,
-    size: 22 + Math.random() * 20,
+    size: 25.3 + Math.random() * 23, // 15% larger than the original 22-42px range
     wobble: (Math.random() - 0.5) * 30,
   }));
 }

@@ -16,9 +16,6 @@ export function SiteHeader() {
           <Link href="/process-journal" className="text-[var(--ink)]/80 hover:text-[var(--ink)]">
             Process Journal
           </Link>
-          <Link href="/command-terms" className="text-[var(--ink)]/80 hover:text-[var(--ink)]">
-            Command Terms
-          </Link>
         </nav>
       </div>
     </header>

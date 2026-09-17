@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { Fragment } from "react";
-import { commandTermFormToSlug } from "@/content/command-terms";
+import { commandTermFormToSlug, commandTermBySlug } from "@/content/command-terms";
 import { TERM_TOOLTIP_SHOW, TERM_TOOLTIP_HIDE } from "@/lib/termTooltipEvents";
 
 const MARKER = /\{\{([^}]+)\}\}/g;
@@ -15,15 +14,11 @@ function hide(el: HTMLElement) {
 }
 
 /**
- * Renders content text, turning any {{word}} marker into a link to that
- * word's entry on the Command Terms page. Markers are hand placed in the
- * grade content files only where a word is genuinely being used as the
- * MYP command term (the instructional verb), not as an ordinary noun.
- *
- * Hovering, tapping (on a device with a pointer), or tabbing to the word
- * also shows its meaning right on the page via TermTooltipLayer, so
- * students don't have to leave the grade page just to check a definition.
- * The link itself still works, for anyone who wants the full glossary.
+ * Renders content text, turning any {{word}} marker into an inline command
+ * term with a hover/focus-triggered definition (see TermTooltipLayer).
+ * Markers are hand placed in the grade content files only where a word is
+ * genuinely being used as the MYP command term (the instructional verb),
+ * not as an ordinary noun.
  */
 export function TermText({ text }: { text: string }) {
   const parts = text.split(MARKER);
@@ -41,18 +36,20 @@ export function TermText({ text }: { text: string }) {
           }
           return <Fragment key={i}>{part}</Fragment>;
         }
+        const definition = commandTermBySlug[slug].definition;
         return (
-          <Link
+          <span
             key={i}
-            href={`/command-terms#term-${slug}`}
-            className="underline decoration-dotted decoration-1 underline-offset-2 text-inherit hover:decoration-solid"
+            tabIndex={0}
+            aria-label={`${part}: MYP command term. ${definition}`}
+            className="cursor-help underline decoration-dotted decoration-1 underline-offset-2 hover:decoration-solid"
             onMouseEnter={(e) => show(e.currentTarget, slug)}
             onMouseLeave={(e) => hide(e.currentTarget)}
             onFocus={(e) => show(e.currentTarget, slug)}
             onBlur={(e) => hide(e.currentTarget)}
           >
             {part}
-          </Link>
+          </span>
         );
       })}
     </>
