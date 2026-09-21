@@ -59,17 +59,14 @@ export function DesignCycleWheel({ className }: { className?: string }) {
         className={className}
         style={{ overflow: "visible" }}
         role="img"
-        aria-labelledby="design-cycle-wheel-title"
+        aria-label="The MYP Design Cycle as a wheel: Criterion A, Inquiring and analysing; Criterion B, Developing ideas; Criterion C, Creating the solution; Criterion D, Evaluating, each with its four strands, read clockwise. Hover, tap, or tab to a quarter of the wheel for its description."
       >
-        <title id="design-cycle-wheel-title">
-          The MYP Design Cycle as a wheel: Criterion A, Inquiring and analysing; Criterion B,
-          Developing ideas; Criterion C, Creating the solution; Criterion D, Evaluating, each
-          with its four strands, read clockwise. Hover, tap, or tab to a quarter of the wheel for
-          its description.
-        </title>
         <defs>
           <marker id="wheel-arrowhead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
             <path d="M0,0 L8,4 L0,8 Z" fill="var(--ink)" opacity={0.55} />
+          </marker>
+          <marker id="wheel-arrowhead-reverse" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="var(--ink)" opacity={0.4} />
           </marker>
         </defs>
 
@@ -129,6 +126,13 @@ export function DesignCycleWheel({ className }: { className?: string }) {
         <path d="M 559.99 254.16 A 264 264 0 0 1 559.99 345.84" fill="none" stroke="var(--ink)" strokeWidth={2} strokeLinecap="round" markerEnd="url(#wheel-arrowhead)" opacity={0.55} />
         <path d="M 345.84 559.99 A 264 264 0 0 1 254.16 559.99" fill="none" stroke="var(--ink)" strokeWidth={2} strokeLinecap="round" markerEnd="url(#wheel-arrowhead)" opacity={0.55} />
         <path d="M 40.01 345.84 A 264 264 0 0 1 40.01 254.16" fill="none" stroke="var(--ink)" strokeWidth={2} strokeLinecap="round" markerEnd="url(#wheel-arrowhead)" opacity={0.55} />
+
+        {/* Inner arrows at the hub, pointing the opposite way around the wheel: the cycle is
+            iterative, so students can step back to an earlier criterion, not just move forward. */}
+        <path d="M 344.46 177.84 A 130 130 0 0 0 255.54 177.84" fill="none" stroke="var(--ink)" strokeWidth={1.75} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.4} />
+        <path d="M 422.16 344.46 A 130 130 0 0 0 422.16 255.54" fill="none" stroke="var(--ink)" strokeWidth={1.75} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.4} />
+        <path d="M 277.43 428.02 A 130 130 0 0 0 322.57 428.02" fill="none" stroke="var(--ink)" strokeWidth={1.75} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.4} />
+        <path d="M 171.98 277.43 A 130 130 0 0 0 171.98 322.57" fill="none" stroke="var(--ink)" strokeWidth={1.75} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.4} />
 
         <circle cx={300} cy={300} r={126} fill="var(--paper)" stroke="#e5e5e5" strokeWidth={1} />
         <text x={300} y={292} textAnchor="middle" dominantBaseline="central" fontSize={16} fontWeight={700} fill="var(--ink)">The Design</text>

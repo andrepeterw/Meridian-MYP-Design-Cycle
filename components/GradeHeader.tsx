@@ -23,7 +23,7 @@ export function GradeHeader({ content }: { content: GradeContent }) {
             <a
               key={key}
               href={`#criterion-${key}`}
-              className="rounded-full px-3 py-1 text-sm font-medium text-white shadow-sm"
+              className="rounded-full px-3 py-1 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:shadow-md hover:brightness-110"
               style={{ background: content.criteria[key].color }}
             >
               {key}: {content.criteria[key].name}

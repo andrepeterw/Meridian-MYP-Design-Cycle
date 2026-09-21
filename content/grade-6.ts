@@ -158,7 +158,7 @@ export const grade6: GradeContent = {
           instructions:
             "As you build, practice the specific skill your project needs (cutting, coding, sewing, soldering, whatever it is) carefully, and ask for help before you make a mistake permanent.",
           rubricSummary:
-            "Strong work shows careful, controlled use of tools and materials, not rushed or careless.",
+            "Strong work shows careful, controlled use of tools and materials, not rushed or careless. Take a photo while you work to show this in your Process Journal.",
           citation: {
             refId: "meyerrosegordon2014",
             framing:
@@ -172,7 +172,7 @@ export const grade6: GradeContent = {
           instructions:
             "Build your solution by following your plan from C.i. If you skip a step or change something, write it down as you go.",
           rubricSummary:
-            "Strong work results in a solution that actually works the way it was meant to, and mostly matches the original plan.",
+            "Strong work results in a solution that actually works the way it was meant to, and mostly matches the original plan. Take photos as you build to show whether you followed the plan or changed it.",
           citation: {
             refId: "almeqdad2023",
             framing:

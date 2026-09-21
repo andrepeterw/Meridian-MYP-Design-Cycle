@@ -158,7 +158,7 @@ export const grade9: GradeContent = {
           instructions:
             "{{Demonstrate}} excellent technical skills, choosing your own materials with minimal guidance and pushing your technique beyond what you've already mastered.",
           rubricSummary:
-            "Strong work {{demonstrates}} excellent, independent technical skill, including at least one technique that was genuinely new or challenging for you.",
+            "Strong work {{demonstrates}} excellent, independent technical skill, including at least one technique that was genuinely new or challenging for you. Back this up with your own photo or screenshot evidence in your Process Journal.",
           citation: {
             refId: "meyerrosegordon2014",
             framing:
@@ -172,7 +172,7 @@ export const grade9: GradeContent = {
           instructions:
             "Follow your plan to {{create}} a solution that functions as intended, adapting where necessary and documenting your reasoning as you go, with minimal check ins.",
           rubricSummary:
-            "Strong work results in a solution that functions as intended, built with real independence and thoughtful adaptation rather than rigid or careless execution.",
+            "Strong work results in a solution that functions as intended, built with real independence and thoughtful adaptation rather than rigid or careless execution. Support this with photo evidence in your Process Journal documenting your build and any adaptations to the plan.",
           citation: {
             refId: "almeqdad2023",
             framing:

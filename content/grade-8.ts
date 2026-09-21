@@ -154,7 +154,7 @@ export const grade8: GradeContent = {
           instructions:
             "{{Demonstrate}} excellent technical skills as you build, choosing tools and techniques that suit both the task and how you personally work best.",
           rubricSummary:
-            "Strong work shows competent to excellent control of tools and materials, with technique that's clearly been practiced, not just attempted once.",
+            "Strong work shows competent to excellent control of tools and materials, with technique that's clearly been practiced, not just attempted once. Document this with photo or screenshot evidence in your Process Journal, not just a description.",
           citation: {
             refId: "meyerrosegordon2014",
             framing:
@@ -168,7 +168,7 @@ export const grade8: GradeContent = {
           instructions:
             "Follow your plan to {{create}} the solution, aiming for a final product that functions as intended and is {{presented}} professionally.",
           rubricSummary:
-            "Strong work results in a solution that functions as intended and is finished to a standard you'd be comfortable showing someone outside your class.",
+            "Strong work results in a solution that functions as intended and is finished to a standard you'd be comfortable showing someone outside your class. Document your build with photo evidence in your Process Journal, showing whether you followed the plan or adapted it.",
           citation: {
             refId: "almeqdad2023",
             framing:

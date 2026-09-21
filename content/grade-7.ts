@@ -78,9 +78,9 @@ export const grade7: GradeContent = {
           id: "B.i",
           title: "{{Develop}} a design specification",
           instructions:
-            "Write a list of four or five success criteria for your solution. Try to make at least one of them measurable, a number, a time, a size.",
+            "Write a list of four or five success criteria for your solution. Make each one specific enough that you could check whether you met it: a number, a time, a size, not just a feeling.",
           rubricSummary:
-            "Strong work {{lists}} specific criteria, with at least one you could actually measure once the solution is built.",
+            "Strong work {{lists}} specific criteria you'll actually be able to check once the solution is built, since you'll be measuring all of them in Criterion D.",
           citation: {
             refId: "condliffe2017",
             framing:
@@ -156,7 +156,7 @@ export const grade7: GradeContent = {
           instructions:
             "Practice the specific technique your build needs before using it on your final piece, and ask your teacher for feedback on your technique, not just your progress.",
           rubricSummary:
-            "Strong work shows satisfactory to competent technical skill, with visible care and control, especially in a technique that was new to you.",
+            "Strong work shows satisfactory to competent technical skill, with visible care and control, especially in a technique that was new to you. Include a photo or screenshot of yourself using the technique as evidence in your Process Journal.",
           citation: {
             refId: "meyerrosegordon2014",
             framing:
@@ -170,7 +170,7 @@ export const grade7: GradeContent = {
           instructions:
             "Build your solution, following your plan from C.i as closely as you can. Note any point where you had to deviate and why.",
           rubricSummary:
-            "Strong work results in a solution that functions as intended and is presented in a way that shows care, closely following the original plan.",
+            "Strong work results in a solution that functions as intended and is presented in a way that shows care, closely following the original plan. Include photos in your Process Journal showing your build, and note any changes to the plan with evidence.",
           citation: {
             refId: "almeqdad2023",
             framing:

@@ -157,7 +157,7 @@ export const grade10: GradeContent = {
           instructions:
             "{{Demonstrate}} excellent technical skills throughout, seeking out techniques beyond what's been taught in class if your solution requires them.",
           rubricSummary:
-            "Excellent work {{demonstrates}} excellent technical skill, including techniques the student sought out and learned independently, beyond classroom instruction.",
+            "Excellent work {{demonstrates}} excellent technical skill, including techniques the student sought out and learned independently, beyond classroom instruction. Support this with your own photographic or screenshot evidence in your Process Journal, not just a written account.",
           citation: {
             refId: "meyerrosegordon2014",
             framing:
@@ -171,7 +171,7 @@ export const grade10: GradeContent = {
           instructions:
             "Follow your plan to {{create}} a solution that functions exactly as intended, finished to a standard suitable for presentation outside of school.",
           rubricSummary:
-            "Excellent work results in a solution that functions as intended and is finished and {{presented}} to a professional, presentation ready standard.",
+            "Excellent work results in a solution that functions as intended and is finished and {{presented}} to a professional, presentation ready standard. Back this up with photo evidence in your Process Journal documenting your build process and any justified adaptations to the plan.",
           citation: {
             refId: "almeqdad2023",
             framing:
