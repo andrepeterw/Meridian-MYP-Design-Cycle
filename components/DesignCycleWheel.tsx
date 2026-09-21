@@ -66,7 +66,7 @@ export function DesignCycleWheel({ className }: { className?: string }) {
             <path d="M0,0 L8,4 L0,8 Z" fill="var(--ink)" opacity={0.55} />
           </marker>
           <marker id="wheel-arrowhead-reverse" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-            <path d="M0,0 L8,4 L0,8 Z" fill="var(--ink)" opacity={0.4} />
+            <path d="M0,0 L8,4 L0,8 Z" fill="var(--ink)" opacity={0.55} />
           </marker>
         </defs>
 
@@ -127,12 +127,15 @@ export function DesignCycleWheel({ className }: { className?: string }) {
         <path d="M 345.84 559.99 A 264 264 0 0 1 254.16 559.99" fill="none" stroke="var(--ink)" strokeWidth={2} strokeLinecap="round" markerEnd="url(#wheel-arrowhead)" opacity={0.55} />
         <path d="M 40.01 345.84 A 264 264 0 0 1 40.01 254.16" fill="none" stroke="var(--ink)" strokeWidth={2} strokeLinecap="round" markerEnd="url(#wheel-arrowhead)" opacity={0.55} />
 
-        {/* Inner arrows at the hub, pointing the opposite way around the wheel: the cycle is
-            iterative, so students can step back to an earlier criterion, not just move forward. */}
-        <path d="M 344.46 177.84 A 130 130 0 0 0 255.54 177.84" fill="none" stroke="var(--ink)" strokeWidth={1.75} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.4} />
-        <path d="M 422.16 344.46 A 130 130 0 0 0 422.16 255.54" fill="none" stroke="var(--ink)" strokeWidth={1.75} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.4} />
-        <path d="M 277.43 428.02 A 130 130 0 0 0 322.57 428.02" fill="none" stroke="var(--ink)" strokeWidth={1.75} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.4} />
-        <path d="M 171.98 277.43 A 130 130 0 0 0 171.98 322.57" fill="none" stroke="var(--ink)" strokeWidth={1.75} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.4} />
+        {/* Inner arrows in the light ring right around the hub, pointing the opposite way
+            around the wheel: the cycle is iterative, so students can step back to an earlier
+            criterion, not just move forward. Kept off the saturated quadrant color (radius 130+)
+            so the dark stroke stays legible against the paper-colored ring instead of vanishing
+            into a same-tone background. */}
+        <path d="M 354.09 183.99 A 128 128 0 0 0 245.91 183.99" fill="none" stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.55} />
+        <path d="M 416.01 354.09 A 128 128 0 0 0 416.01 245.91" fill="none" stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.55} />
+        <path d="M 245.91 416.01 A 128 128 0 0 0 354.09 416.01" fill="none" stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.55} />
+        <path d="M 183.99 245.91 A 128 128 0 0 0 183.99 354.09" fill="none" stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.55} />
 
         <circle cx={300} cy={300} r={126} fill="var(--paper)" stroke="#e5e5e5" strokeWidth={1} />
         <text x={300} y={292} textAnchor="middle" dominantBaseline="central" fontSize={16} fontWeight={700} fill="var(--ink)">The Design</text>
