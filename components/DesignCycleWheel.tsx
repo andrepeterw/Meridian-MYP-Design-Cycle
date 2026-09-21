@@ -122,6 +122,10 @@ export function DesignCycleWheel({ className }: { className?: string }) {
           <text x={258.45} y={91.09} textAnchor="middle" dominantBaseline="central" fontSize={10.5} fontWeight={600} fill="var(--ink)"><tspan x={258.45} dy="-0.35em">Explain</tspan><tspan x={258.45} dy="1.1em">impact</tspan></text>
         </g>
 
+        <circle cx={300} cy={300} r={126} fill="var(--paper)" stroke="#e5e5e5" strokeWidth={1} />
+        <text x={300} y={292} textAnchor="middle" dominantBaseline="central" fontSize={16} fontWeight={700} fill="var(--ink)">The Design</text>
+        <text x={300} y={314} textAnchor="middle" dominantBaseline="central" fontSize={16} fontWeight={700} fill="var(--ink)">Cycle</text>
+
         <path d="M 254.16 40.01 A 264 264 0 0 1 345.84 40.01" fill="none" stroke="var(--ink)" strokeWidth={2} strokeLinecap="round" markerEnd="url(#wheel-arrowhead)" opacity={0.55} />
         <path d="M 559.99 254.16 A 264 264 0 0 1 559.99 345.84" fill="none" stroke="var(--ink)" strokeWidth={2} strokeLinecap="round" markerEnd="url(#wheel-arrowhead)" opacity={0.55} />
         <path d="M 345.84 559.99 A 264 264 0 0 1 254.16 559.99" fill="none" stroke="var(--ink)" strokeWidth={2} strokeLinecap="round" markerEnd="url(#wheel-arrowhead)" opacity={0.55} />
@@ -129,17 +133,12 @@ export function DesignCycleWheel({ className }: { className?: string }) {
 
         {/* Inner arrows in the light ring right around the hub, pointing the opposite way
             around the wheel: the cycle is iterative, so students can step back to an earlier
-            criterion, not just move forward. Kept off the saturated quadrant color (radius 130+)
-            so the dark stroke stays legible against the paper-colored ring instead of vanishing
-            into a same-tone background. */}
+            criterion, not just move forward. Drawn after the hub circle so they always sit on
+            top of it, instead of relying on radius alone to stay clear of its fill. */}
         <path d="M 354.09 183.99 A 128 128 0 0 0 245.91 183.99" fill="none" stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.55} />
         <path d="M 416.01 354.09 A 128 128 0 0 0 416.01 245.91" fill="none" stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.55} />
         <path d="M 245.91 416.01 A 128 128 0 0 0 354.09 416.01" fill="none" stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.55} />
         <path d="M 183.99 245.91 A 128 128 0 0 0 183.99 354.09" fill="none" stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.55} />
-
-        <circle cx={300} cy={300} r={126} fill="var(--paper)" stroke="#e5e5e5" strokeWidth={1} />
-        <text x={300} y={292} textAnchor="middle" dominantBaseline="central" fontSize={16} fontWeight={700} fill="var(--ink)">The Design</text>
-        <text x={300} y={314} textAnchor="middle" dominantBaseline="central" fontSize={16} fontWeight={700} fill="var(--ink)">Cycle</text>
 
         {/* Invisible hit zones, one per quadrant, driving hover/focus/tap. */}
         {CRITERIA.map((key) => (

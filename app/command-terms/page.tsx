@@ -22,7 +22,7 @@ export default function CommandTermsPage() {
         {commandTerms.map((t) => (
           <div
             key={t.slug}
-            className="rounded-2xl border border-black/10 bg-white/95 p-5 shadow-sm"
+            className="rounded-2xl border border-black/10 bg-white/95 p-5 shadow-sm transition-all duration-200 hover:border-[var(--ink)]/25 hover:shadow-md"
           >
             <div className="mb-3 flex items-center gap-3">
               <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--ink)]/5 text-[var(--ink)]">
