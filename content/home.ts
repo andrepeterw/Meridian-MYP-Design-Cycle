@@ -42,5 +42,7 @@ export const homeContent = {
     designerAfterLink: ", MYP Design Teacher",
     reviewer: "Peer reviewed by Dr. Schwarzkopf, MYP Design teacher",
     year: "2026",
+    licenseText: "CC BY-NC 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-nc/4.0/",
   },
 };

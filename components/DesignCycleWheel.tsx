@@ -68,6 +68,9 @@ export function DesignCycleWheel({ className }: { className?: string }) {
           <marker id="wheel-arrowhead-reverse" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
             <path d="M0,0 L8,4 L0,8 Z" fill="var(--ink)" opacity={0.55} />
           </marker>
+          <marker id="wheel-arrowhead-radial" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse">
+            <path d="M0,0 L8,4 L0,8 Z" fill="var(--ink)" opacity={0.55} />
+          </marker>
         </defs>
 
         <g style={{ filter: active === "A" ? "brightness(1.08)" : undefined, transition: "filter 0.15s" }}>
@@ -131,14 +134,14 @@ export function DesignCycleWheel({ className }: { className?: string }) {
         <path d="M 345.84 559.99 A 264 264 0 0 1 254.16 559.99" fill="none" stroke="var(--ink)" strokeWidth={2} strokeLinecap="round" markerEnd="url(#wheel-arrowhead)" opacity={0.55} />
         <path d="M 40.01 345.84 A 264 264 0 0 1 40.01 254.16" fill="none" stroke="var(--ink)" strokeWidth={2} strokeLinecap="round" markerEnd="url(#wheel-arrowhead)" opacity={0.55} />
 
-        {/* Inner arrows in the light ring right around the hub, pointing the opposite way
-            around the wheel: the cycle is iterative, so students can step back to an earlier
-            criterion, not just move forward. Drawn after the hub circle so they always sit on
-            top of it, instead of relying on radius alone to stay clear of its fill. */}
-        <path d="M 354.09 183.99 A 128 128 0 0 0 245.91 183.99" fill="none" stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.55} />
-        <path d="M 416.01 354.09 A 128 128 0 0 0 416.01 245.91" fill="none" stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.55} />
-        <path d="M 245.91 416.01 A 128 128 0 0 0 354.09 416.01" fill="none" stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.55} />
-        <path d="M 183.99 245.91 A 128 128 0 0 0 183.99 354.09" fill="none" stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerEnd="url(#wheel-arrowhead-reverse)" opacity={0.55} />
+        {/* Straight double-headed arrows radiating from the hub toward each criterion,
+            crossing at the center: the cycle can move directly between any two criteria
+            through the middle, not just step by step around the ring. Drawn after the hub
+            circle so they always sit on top of it. */}
+        <line x1={338.9} y1={261.1} x2={377.8} y2={222.2} stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerStart="url(#wheel-arrowhead-radial)" markerEnd="url(#wheel-arrowhead-radial)" opacity={0.55} />
+        <line x1={338.9} y1={338.9} x2={377.8} y2={377.8} stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerStart="url(#wheel-arrowhead-radial)" markerEnd="url(#wheel-arrowhead-radial)" opacity={0.55} />
+        <line x1={261.1} y1={338.9} x2={222.2} y2={377.8} stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerStart="url(#wheel-arrowhead-radial)" markerEnd="url(#wheel-arrowhead-radial)" opacity={0.55} />
+        <line x1={261.1} y1={261.1} x2={222.2} y2={222.2} stroke="var(--ink)" strokeWidth={2.5} strokeLinecap="round" markerStart="url(#wheel-arrowhead-radial)" markerEnd="url(#wheel-arrowhead-radial)" opacity={0.55} />
 
         {/* Invisible hit zones, one per quadrant, driving hover/focus/tap. */}
         {CRITERIA.map((key) => (

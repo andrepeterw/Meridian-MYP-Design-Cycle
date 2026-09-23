@@ -146,6 +146,32 @@ export default function HomePage() {
         </p>
         <p>{homeContent.credits.reviewer}</p>
         <p>{homeContent.credits.year}</p>
+        <p className="mt-2">
+          This work is licensed under{" "}
+          <a
+            href={homeContent.credits.licenseUrl}
+            target="_blank"
+            rel="noopener noreferrer license"
+            className="underline underline-offset-2"
+          >
+            {homeContent.credits.licenseText}
+          </a>
+          <img
+            src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+            alt=""
+            className="ml-1 inline-block h-[1em] w-[1em] align-text-bottom"
+          />
+          <img
+            src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+            alt=""
+            className="ml-1 inline-block h-[1em] w-[1em] align-text-bottom"
+          />
+          <img
+            src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
+            alt=""
+            className="ml-1 inline-block h-[1em] w-[1em] align-text-bottom"
+          />
+        </p>
       </section>
     </main>
   );
