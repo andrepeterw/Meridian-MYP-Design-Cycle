@@ -82,7 +82,7 @@ export function DesignCycleRoute({ content }: { content: GradeContent }) {
           aria-hidden="true"
           className="absolute left-1/2 top-8 -translate-x-1/2 -translate-y-1/2"
         >
-          <svg viewBox="0 0 24 24" className="h-6 w-6 drop-shadow-sm">
+          <svg viewBox="0 0 24 24" className="h-[1.725rem] w-[1.725rem] drop-shadow-sm">
             <path
               d="M12 1.5C7.86 1.5 4.5 4.86 4.5 9c0 5.63 7.5 13.5 7.5 13.5S19.5 14.63 19.5 9c0-4.14-3.36-7.5-7.5-7.5z"
               fill="var(--ink)"

@@ -36,7 +36,7 @@ export function StrandCard({
         className="absolute top-9 hidden -translate-y-1/2 md:block"
         style={{ [isEven ? "right" : "left"]: "-2.25rem" }}
       >
-        <svg viewBox="0 0 24 24" className="h-6 w-6 drop-shadow-sm">
+        <svg viewBox="0 0 24 24" className="h-[1.725rem] w-[1.725rem] drop-shadow-sm">
           <path
             d="M12 1.5C7.86 1.5 4.5 4.86 4.5 9c0 5.63 7.5 13.5 7.5 13.5S19.5 14.63 19.5 9c0-4.14-3.36-7.5-7.5-7.5z"
             fill={color}
