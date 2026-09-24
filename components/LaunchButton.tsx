@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { usePrefersReducedMotion } from "@/lib/reducedMotion";
 
-const CONFETTI_COLORS = ["#0B5478", "#F0782A", "#0B7A50", "#D9433F", "#3A3182", "#F2A93C"];
+const CONFETTI_COLORS = ["#0E477F", "#DE8513", "#0D7D65", "#CC4C2D", "#4D3787", "#EFC63F"];
 const ROCKET_COUNT = 15;
 const CONFETTI_COUNT = 46;
 const CELEBRATION_MS = 4200;

@@ -39,7 +39,7 @@ export const processJournalContent = {
     {
       key: "A",
       name: "Inquiring and analysing",
-      color: "#0B5478",
+      color: "#0E477F",
       nodes: [
         { id: "A.i", label: "A.i", evidenceNote: "Notes justifying the problem: who it affects, and why." },
         { id: "A.ii", label: "A.ii", evidenceNote: "Your prioritized research plan and what you found." },
@@ -50,7 +50,7 @@ export const processJournalContent = {
     {
       key: "B",
       name: "Developing ideas",
-      color: "#F0782A",
+      color: "#DE8513",
       nodes: [
         { id: "B.i", label: "B.i", evidenceNote: "Your design specification / success criteria." },
         { id: "B.ii", label: "B.ii & B.iii", evidenceNote: "Sketches of design ideas, plus your justification for the one you chose." },
@@ -60,7 +60,7 @@ export const processJournalContent = {
     {
       key: "C",
       name: "Creating the solution",
-      color: "#0B7A50",
+      color: "#0D7D65",
       nodes: [
         { id: "C.i", label: "C.i", evidenceNote: "Your build plan, with time and resources considered." },
         { id: "C.ii", label: "C.ii", evidenceNote: "Photos or video of technical skills in progress." },
@@ -71,7 +71,7 @@ export const processJournalContent = {
     {
       key: "D",
       name: "Evaluating",
-      color: "#D9433F",
+      color: "#CC4C2D",
       nodes: [
         { id: "D.i", label: "D.i", evidenceNote: "Your testing methods and raw results." },
         { id: "D.ii", label: "D.ii", evidenceNote: "Your evaluation against your design specification." },
