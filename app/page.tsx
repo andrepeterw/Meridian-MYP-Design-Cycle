@@ -134,6 +134,7 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-2xl px-6 pb-24 text-center text-sm text-[var(--ink)]/60">
         <p>
+          {homeContent.credits.designerBeforeLink}
           <a
             href={homeContent.credits.designerLinkUrl}
             target="_blank"

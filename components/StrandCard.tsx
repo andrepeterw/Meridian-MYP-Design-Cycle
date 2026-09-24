@@ -33,12 +33,19 @@ export function StrandCard({
       <span
         data-strand-anchor
         aria-hidden="true"
-        className="absolute top-9 hidden h-3 w-3 -translate-y-1/2 rounded-full ring-4 ring-[var(--paper)] md:block"
-        style={{
-          background: color,
-          [isEven ? "right" : "left"]: "-2.25rem",
-        }}
-      />
+        className="absolute top-9 hidden -translate-y-1/2 md:block"
+        style={{ [isEven ? "right" : "left"]: "-2.25rem" }}
+      >
+        <svg viewBox="0 0 24 24" className="h-6 w-6 drop-shadow-sm">
+          <path
+            d="M12 1.5C7.86 1.5 4.5 4.86 4.5 9c0 5.63 7.5 13.5 7.5 13.5S19.5 14.63 19.5 9c0-4.14-3.36-7.5-7.5-7.5z"
+            fill={color}
+            stroke="var(--paper)"
+            strokeWidth={1.75}
+          />
+          <circle cx="12" cy="9" r="2.75" fill="var(--paper)" />
+        </svg>
+      </span>
 
       <div
         className="rounded-2xl border border-black/5 bg-white/95 p-6 shadow-sm"
