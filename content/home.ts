@@ -39,7 +39,7 @@ export const homeContent = {
   credits: {
     designerBeforeLink: "Designed by ",
     designerLinkText: "Mr. Andre Peter Wiggins",
-    designerLinkUrl: "https://linktr.ee/peterwiggins",
+    designerLinkUrl: "http://linktr.ee/andrepeterw",
     designerAfterLink: ", MYP Design Teacher",
     reviewer: "Peer reviewed by Dr. Schwarzkopf, MYP Design teacher",
     year: "2026",
