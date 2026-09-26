@@ -76,20 +76,21 @@ export default function ProcessJournalPage() {
         </h2>
       </div>
 
-      {exemplarSiteUrl ? (
-        <p className="mx-auto max-w-2xl leading-relaxed text-[var(--ink)]/85">
-          See a real, consented example journal here:{" "}
+      {exemplarSiteUrl && (
+        <p className="mx-auto mb-6 max-w-2xl leading-relaxed text-[var(--ink)]/85">
+          See a real example journal here:{" "}
           <a
             href={exemplarSiteUrl}
             className="text-[var(--ink)] underline underline-offset-2"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {exemplarSiteUrl}
+            Dr. S&apos;s Process Journal
           </a>
         </p>
-      ) : (
-        <>
+      )}
+
+      <>
           <div className="mx-auto max-w-2xl rounded-xl border border-black/10 bg-black/[0.03] p-4 text-sm font-medium text-[var(--ink)]/80">
             {processJournalContent.exemplars.disclaimer}
           </div>
@@ -142,8 +143,7 @@ export default function ProcessJournalPage() {
               )
             )}
           </div>
-        </>
-      )}
+      </>
     </main>
   );
 }

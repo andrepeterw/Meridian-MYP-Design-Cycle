@@ -11,11 +11,9 @@ export interface ProcessJournalCriterion {
   nodes: ProcessJournalNode[];
 }
 
-/**
- * Set to a real Google Site share link once one exists (Section 4.5, Option B in the brief).
- * Until then, the /process-journal page falls back to the fictional exemplar below.
- */
-export const exemplarSiteUrl: string | null = null;
+/** A real example Process Journal, linked above the illustrative product/digital examples. */
+export const exemplarSiteUrl: string | null =
+  "https://sites.google.com/aislagos.org/dr-s-process-journal/home";
 
 export const processJournalContent = {
   intro:
