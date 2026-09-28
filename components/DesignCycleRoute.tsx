@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { CriterionKey, GradeContent } from "@/content/types";
 import { criterionOrder } from "@/content/theme";
+import { achievementYearForGrade } from "@/content/grades";
 import { CriterionSection } from "./CriterionSection";
 import { ConnectorLine } from "./ConnectorLine";
 import { LaunchButton } from "./LaunchButton";
@@ -70,6 +71,7 @@ export function DesignCycleRoute({ content }: { content: GradeContent }) {
         <CriterionSection
           key={key}
           criterion={content.criteria[key]}
+          achievementYear={achievementYearForGrade[content.grade]}
           ref={(el) => {
             sectionRefs.current[key] = el;
           }}

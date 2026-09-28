@@ -2,17 +2,23 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import type { Strand } from "@/content/types";
+import type { AchievementYear } from "@/content/achievement-levels";
+import { achievementLevelsByStrand } from "@/content/achievement-levels";
 import { TermText } from "./TermText";
+import { AchievementLadderToggle } from "./AchievementLadderToggle";
 
 export function StrandCard({
   strand,
   color,
   index,
+  achievementYear,
 }: {
   strand: Strand;
   color: string;
   index: number;
+  achievementYear: AchievementYear;
 }) {
+  const achievementLevels = achievementLevelsByStrand[strand.id]?.[achievementYear];
   const reduceMotion = useReducedMotion();
   const isEven = index % 2 === 0;
 
@@ -67,10 +73,14 @@ export function StrandCard({
           <TermText text={strand.instructions} />
         </p>
 
-        <p className="mb-4 rounded-lg bg-black/[0.035] p-3 text-sm leading-relaxed text-[var(--ink)]">
-          <strong>What strong work looks like: </strong>
-          <TermText text={strand.rubricSummary} />
-        </p>
+        {achievementLevels ? (
+          <AchievementLadderToggle levels={achievementLevels} color={color} />
+        ) : (
+          <p className="mb-4 rounded-lg bg-black/[0.035] p-3 text-sm leading-relaxed text-[var(--ink)]">
+            <strong>What strong work looks like: </strong>
+            <TermText text={strand.rubricSummary} />
+          </p>
+        )}
 
         <div className="mb-4 space-y-2 text-sm leading-relaxed text-black/70">
           <p>
