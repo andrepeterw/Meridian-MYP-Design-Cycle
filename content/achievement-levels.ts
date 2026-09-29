@@ -27,8 +27,7 @@ export type StrandAchievementLevels = Record<AchievementYear, AchievementLevel[]
 const NOT_DESCRIBED_AT_1_2: AchievementLevel = {
   band: "1–2",
   commandTerm: "—",
-  description:
-    "Not described separately at this level. A level 1 to 2 answer is usually too basic to show this part of the task on its own.",
+  description: "Not marked separately.",
 };
 
 export const achievementLevelsByStrand: Partial<Record<StrandId, StrandAchievementLevels>> = {
