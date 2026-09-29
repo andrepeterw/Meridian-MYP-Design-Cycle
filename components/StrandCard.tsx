@@ -5,7 +5,8 @@ import type { Strand } from "@/content/types";
 import type { AchievementYear } from "@/content/achievement-levels";
 import { achievementLevelsByStrand } from "@/content/achievement-levels";
 import { TermText } from "./TermText";
-import { AchievementLadderToggle } from "./AchievementLadderToggle";
+import { AchievementLadder } from "./AchievementLadder";
+import { StrandRevealToggle } from "./StrandRevealToggle";
 
 export function StrandCard({
   strand,
@@ -73,14 +74,16 @@ export function StrandCard({
           <TermText text={strand.instructions} />
         </p>
 
-        {achievementLevels ? (
-          <AchievementLadderToggle levels={achievementLevels} color={color} />
-        ) : (
-          <p className="mb-4 rounded-lg bg-black/[0.035] p-3 text-sm leading-relaxed text-[var(--ink)]">
-            <strong>What strong work looks like: </strong>
-            <TermText text={strand.rubricSummary} />
-          </p>
-        )}
+        <StrandRevealToggle color={color}>
+          {achievementLevels ? (
+            <AchievementLadder levels={achievementLevels} color={color} />
+          ) : (
+            <p className="text-sm leading-relaxed text-[var(--ink)]">
+              <strong>What strong work looks like: </strong>
+              <TermText text={strand.rubricSummary} />
+            </p>
+          )}
+        </StrandRevealToggle>
 
         <div className="mb-4 space-y-2 text-sm leading-relaxed text-black/70">
           <p>

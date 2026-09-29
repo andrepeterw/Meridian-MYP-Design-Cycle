@@ -1,16 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import type { AchievementLevel } from "@/content/achievement-levels";
-import { AchievementLadder } from "./AchievementLadder";
 
-export function AchievementLadderToggle({
-  levels,
+export function StrandRevealToggle({
   color,
+  children,
 }: {
-  levels: AchievementLevel[];
   color: string;
+  children: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
   const reduceMotion = useReducedMotion();
@@ -24,7 +22,7 @@ export function AchievementLadderToggle({
         className="text-sm font-medium underline underline-offset-2"
         style={{ color }}
       >
-        See what a level 1 to 8 answer looks like.
+        Click here to see what a level 1 to 8 answer looks like.
       </button>
       <AnimatePresence initial={false}>
         {open && (
@@ -35,9 +33,7 @@ export function AchievementLadderToggle({
             transition={{ duration: reduceMotion ? 0 : 0.3, ease: "easeOut" }}
             className="overflow-hidden"
           >
-            <div className="mt-3 rounded-lg bg-black/[0.035] p-3">
-              <AchievementLadder levels={levels} color={color} />
-            </div>
+            <div className="mt-3 rounded-lg bg-black/[0.035] p-3">{children}</div>
           </motion.div>
         )}
       </AnimatePresence>

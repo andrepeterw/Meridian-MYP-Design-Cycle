@@ -26,7 +26,7 @@ export const grade8: GradeContent = {
         },
         {
           id: "A.ii",
-          title: "{{Identify}} and {{prioritize}} research",
+          title: "Build a research plan that {{states}} and {{prioritizes}} what you need",
           instructions:
             "{{Construct}} a short research plan: {{list}} the primary research (things you'll find out yourself, like surveys or interviews) and secondary research (things you'll find from books, articles, or the internet) you need, and put them in order of priority.",
           rubricSummary:
@@ -40,7 +40,7 @@ export const grade8: GradeContent = {
         },
         {
           id: "A.iii",
-          title: "{{Analyse}} existing products",
+          title: "{{Analyse}} a group of similar products",
           instructions:
             "Find a group of similar products, at least three, that already try to solve this problem. {{Analyse}} them: what do they have in common, where do they differ, and which features actually work well?",
           rubricSummary:
@@ -54,7 +54,7 @@ export const grade8: GradeContent = {
         },
         {
           id: "A.iv",
-          title: "{{Develop}} a design brief",
+          title: "{{Develop}} a design brief that {{presents}} your research",
           instructions:
             "{{Develop}} a design brief that {{presents}} your analysis of the research: the problem, your prioritized research plan, and what the group of products taught you. Write it as a document someone outside your class could understand.",
           rubricSummary:
@@ -74,7 +74,7 @@ export const grade8: GradeContent = {
       strands: [
         {
           id: "B.i",
-          title: "{{Develop}} a design specification",
+          title: "{{Outline}} your design specification, based on your data",
           instructions:
             "{{Develop}} a design specification: a list of success criteria based on the data you actually collected in Criterion A, not just your gut sense of what's needed.",
           rubricSummary:
@@ -88,7 +88,7 @@ export const grade8: GradeContent = {
         },
         {
           id: "B.ii",
-          title: "{{Develop}} a range of feasible design ideas",
+          title: "{{Present}} a range of feasible design ideas",
           instructions:
             "{{Present}} a range of feasible design ideas, using a medium (sketches, diagrams, digital mockups) clear enough that someone outside your class could correctly interpret each one without your help.",
           rubricSummary:
@@ -102,7 +102,7 @@ export const grade8: GradeContent = {
         },
         {
           id: "B.iii",
-          title: "{{Present}} the chosen design and {{justify}} its selection",
+          title: "{{Present}} your chosen design and {{outline}} why you chose it",
           instructions:
             "{{Present}} your chosen design and {{outline}} the reasons for its selection, referring directly back to your design specification from B.i.",
           rubricSummary:
@@ -116,7 +116,7 @@ export const grade8: GradeContent = {
         },
         {
           id: "B.iv",
-          title: "{{Develop}} planning drawings and diagrams",
+          title: "{{Develop}} accurate planning drawings and diagrams",
           instructions:
             "{{Develop}} accurate planning drawings or diagrams of your chosen design, and {{outline}} the requirements (materials, tools, measurements) needed to {{create}} it.",
           rubricSummary:
@@ -136,7 +136,7 @@ export const grade8: GradeContent = {
       strands: [
         {
           id: "C.i",
-          title: "{{Construct}} a logical plan",
+          title: "{{Construct}} a logical plan that {{outlines}} your use of time",
           instructions:
             "{{Construct}} a logical plan that {{outlines}} the efficient use of your time and resources, detailed enough for a peer to actually follow it to {{create}} your solution.",
           rubricSummary:
@@ -150,7 +150,7 @@ export const grade8: GradeContent = {
         },
         {
           id: "C.ii",
-          title: "{{Demonstrate}} technical skills",
+          title: "{{Demonstrate}} excellent technical skills",
           instructions:
             "{{Demonstrate}} excellent technical skills as you build, choosing tools and techniques that suit both the task and how you personally work best.",
           rubricSummary:
@@ -164,7 +164,7 @@ export const grade8: GradeContent = {
         },
         {
           id: "C.iii",
-          title: "Follow the plan to {{create}} the solution",
+          title: "Follow your plan to {{create}} a solution that works",
           instructions:
             "Follow your plan to {{create}} the solution, aiming for a final product that functions as intended and is {{presented}} professionally.",
           rubricSummary:
@@ -178,7 +178,7 @@ export const grade8: GradeContent = {
         },
         {
           id: "C.iv",
-          title: "{{Justify}} changes made to the design",
+          title: "{{Explain}} the changes you made",
           instructions:
             "{{Explain}} the changes you made to your chosen design or plan while making the solution, connecting each one to a specific reason.",
           rubricSummary:
@@ -198,7 +198,7 @@ export const grade8: GradeContent = {
       strands: [
         {
           id: "D.i",
-          title: "{{Design}} testing methods",
+          title: "{{Describe}} detailed testing methods that generate accurate data",
           instructions:
             "{{Describe}} detailed, relevant testing methods that would generate accurate data about how well your solution actually performs.",
           rubricSummary:
@@ -212,7 +212,7 @@ export const grade8: GradeContent = {
         },
         {
           id: "D.ii",
-          title: "{{Evaluate}} the success of the solution",
+          title: "{{Explain}} how successful your solution was",
           instructions:
             "{{Explain}} the success of your solution against your design specification from B.i, using the results of the tests you actually ran.",
           rubricSummary:
@@ -226,7 +226,7 @@ export const grade8: GradeContent = {
         },
         {
           id: "D.iii",
-          title: "{{Explain}} how the solution could be improved",
+          title: "{{Describe}} how the solution could be improved",
           instructions:
             "{{Describe}} how the solution could be improved, {{listing}} specific, realistic changes based on your test results rather than general wishes.",
           rubricSummary:
@@ -240,7 +240,7 @@ export const grade8: GradeContent = {
         },
         {
           id: "D.iv",
-          title: "{{Explain}} the impact of the solution",
+          title: "{{Describe}} the impact of your solution",
           instructions:
             "{{Describe}} the impact of your solution on the client or target audience, using specific, believable detail rather than a general claim that it \"helps.\"",
           rubricSummary:

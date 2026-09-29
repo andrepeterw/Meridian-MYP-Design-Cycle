@@ -28,7 +28,7 @@ export const grade6: GradeContent = {
         },
         {
           id: "A.ii",
-          title: "{{Identify}} and {{prioritize}} research",
+          title: "{{State}} and {{prioritize}} your research",
           instructions:
             "{{List}} three things you'd need to find out before you could solve this problem. Circle the one you think is most important to learn first, and say why.",
           rubricSummary:
@@ -43,7 +43,7 @@ export const grade6: GradeContent = {
         },
         {
           id: "A.iii",
-          title: "{{Analyse}} existing products",
+          title: "{{Describe}} an existing product that inspires your solution",
           instructions:
             "Find one object, app, or invention that already tries to solve a similar problem. Look closely and write down three things you notice about how it works or looks.",
           rubricSummary:
@@ -57,7 +57,7 @@ export const grade6: GradeContent = {
         },
         {
           id: "A.iv",
-          title: "{{Develop}} a design brief",
+          title: "{{Present}} your research findings",
           instructions:
             "Put it all together in one short paragraph: what the problem is, what you found out, and what you noticed from the product you studied. This paragraph is your design brief.",
           rubricSummary:
@@ -78,7 +78,7 @@ export const grade6: GradeContent = {
       strands: [
         {
           id: "B.i",
-          title: "{{Develop}} a design specification",
+          title: "{{List}} your success criteria",
           instructions:
             "Make a checklist of at least three things your solution must do to count as successful. Keep each one short and clear enough that a friend could check it off.",
           rubricSummary:
@@ -92,7 +92,7 @@ export const grade6: GradeContent = {
         },
         {
           id: "B.ii",
-          title: "{{Develop}} a range of feasible design ideas",
+          title: "{{Present}} feasible design ideas",
           instructions:
             "Sketch two or three different ideas that could solve the problem. They don't have to be perfect, just different from each other.",
           rubricSummary:
@@ -106,7 +106,7 @@ export const grade6: GradeContent = {
         },
         {
           id: "B.iii",
-          title: "{{Present}} the chosen design and {{justify}} its selection",
+          title: "{{Present}} your chosen design",
           instructions:
             "Pick your favorite idea. Write two sentences: what it is, and one reason it's better than your other ideas.",
           rubricSummary:
@@ -120,7 +120,7 @@ export const grade6: GradeContent = {
         },
         {
           id: "B.iv",
-          title: "{{Develop}} planning drawings and diagrams",
+          title: "{{Create}} a planning drawing that {{outlines}} the main details",
           instructions:
             "Draw your chosen design one more time, but bigger and labeled. Add arrows or notes showing size, materials, or how the parts fit together.",
           rubricSummary:
@@ -140,7 +140,7 @@ export const grade6: GradeContent = {
       strands: [
         {
           id: "C.i",
-          title: "{{Construct}} a logical plan",
+          title: "{{Outline}} your plan",
           instructions:
             "{{List}} the steps you'll take to build your solution, in order. Next to each step, write roughly how long it will take and what materials you need.",
           rubricSummary:
@@ -154,7 +154,7 @@ export const grade6: GradeContent = {
         },
         {
           id: "C.ii",
-          title: "{{Demonstrate}} technical skills",
+          title: "{{Demonstrate}} excellent technical skills",
           instructions:
             "As you build, practice the specific skill your project needs (cutting, coding, sewing, soldering, whatever it is) carefully, and ask for help before you make a mistake permanent.",
           rubricSummary:
@@ -168,7 +168,7 @@ export const grade6: GradeContent = {
         },
         {
           id: "C.iii",
-          title: "Follow the plan to {{create}} the solution",
+          title: "Follow your plan to {{create}} a solution that works",
           instructions:
             "Build your solution by following your plan from C.i. If you skip a step or change something, write it down as you go.",
           rubricSummary:
@@ -182,7 +182,7 @@ export const grade6: GradeContent = {
         },
         {
           id: "C.iv",
-          title: "{{Justify}} changes made to the design",
+          title: "{{List}} the changes you made",
           instructions:
             "Look back at your notes. Pick one change you made while building, and {{explain}} in one sentence why you made it.",
           rubricSummary:
@@ -202,7 +202,7 @@ export const grade6: GradeContent = {
       strands: [
         {
           id: "D.i",
-          title: "{{Design}} testing methods",
+          title: "{{Outline}} simple testing methods",
           instructions:
             "Think of one simple test you could run on your solution. Decide what you'll measure (like how much weight it holds, or how long it lasts) and how you'll write the results down.",
           rubricSummary:
@@ -216,7 +216,7 @@ export const grade6: GradeContent = {
         },
         {
           id: "D.ii",
-          title: "{{Evaluate}} the success of the solution",
+          title: "{{Outline}} how successful your solution was",
           instructions:
             "Go back to your checklist from B.i. For each item, write whether your solution passed, and how you know.",
           rubricSummary:
@@ -230,7 +230,7 @@ export const grade6: GradeContent = {
         },
         {
           id: "D.iii",
-          title: "{{Explain}} how the solution could be improved",
+          title: "{{Outline}} how the solution could be improved",
           instructions:
             "Pick the one part of your solution that worked the least well. Write one specific idea for how you'd fix it next time.",
           rubricSummary:
@@ -244,7 +244,7 @@ export const grade6: GradeContent = {
         },
         {
           id: "D.iv",
-          title: "{{Explain}} the impact of the solution",
+          title: "{{Outline}} the impact of your solution",
           instructions:
             "Think about the person or people your solution was for. Write one or two sentences about how it would actually change their day if they used it.",
           rubricSummary:

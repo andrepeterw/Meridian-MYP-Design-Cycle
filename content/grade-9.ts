@@ -12,7 +12,7 @@ export const grade9: GradeContent = {
       strands: [
         {
           id: "A.i",
-          title: "{{Explain}} and {{justify}} the need for a solution",
+          title: "{{Explain}} and {{justify}} the need for a solution, for your client or target audience",
           instructions:
             "Working from a checklist of success criteria rather than a template, {{define}} the real problem for a target audience you've {{identified}}. {{Explain}} and {{justify}} why it needs solving, backed by evidence, and {{prioritize}} which piece of evidence matters most.",
           rubricSummary:
@@ -30,7 +30,7 @@ export const grade9: GradeContent = {
         },
         {
           id: "A.ii",
-          title: "{{Identify}} and {{prioritize}} research",
+          title: "{{Identify}} and {{prioritize}} your primary and secondary research",
           instructions:
             "{{Identify}} the primary and secondary research you need, and {{prioritize}} it with real independence: you decide the order, and be ready to {{explain}} your reasoning if asked.",
           rubricSummary:
@@ -44,7 +44,7 @@ export const grade9: GradeContent = {
         },
         {
           id: "A.iii",
-          title: "{{Analyse}} existing products",
+          title: "{{Analyse}} a range of existing products",
           instructions:
             "{{Analyse}} a broader range of existing products, four or more, that address a similar problem for your target audience. Go beyond describing features: {{identify}} patterns in what works and what doesn't across the group.",
           rubricSummary:
@@ -58,7 +58,7 @@ export const grade9: GradeContent = {
         },
         {
           id: "A.iv",
-          title: "{{Develop}} a design brief",
+          title: "{{Develop}} a detailed design brief that {{summarizes}} your research",
           instructions:
             "{{Develop}} a design brief that {{identifies}} your target audience and {{summarizes}} your analysis of the research, written so a client unfamiliar with your process could read it and understand your direction.",
           rubricSummary:
@@ -78,7 +78,7 @@ export const grade9: GradeContent = {
       strands: [
         {
           id: "B.i",
-          title: "{{Develop}} a design specification",
+          title: "{{State}} your design specifications clearly",
           instructions:
             "{{Develop}} a design specification against a checklist of success criteria, with only a minimal template, that clearly {{states}} what your solution must achieve for your target audience, based on your research data.",
           rubricSummary:
@@ -106,7 +106,7 @@ export const grade9: GradeContent = {
         },
         {
           id: "B.iii",
-          title: "{{Present}} the chosen design and {{justify}} its selection",
+          title: "{{Present}} your chosen design and {{justify}} your selection",
           instructions:
             "{{Present}} the chosen design and {{justify}} its selection with reference to the design specification, being ready to {{explain}} why the alternatives you didn't choose fell short.",
           rubricSummary:
@@ -120,7 +120,7 @@ export const grade9: GradeContent = {
         },
         {
           id: "B.iv",
-          title: "{{Develop}} planning drawings and diagrams",
+          title: "{{Develop}} accurate, detailed planning drawings and diagrams",
           instructions:
             "{{Develop}} accurate planning drawings and diagrams, and {{outline}} the requirements for creation with minimal guidance, treating this as a document you could hand to someone else to build from.",
           rubricSummary:
@@ -140,7 +140,7 @@ export const grade9: GradeContent = {
       strands: [
         {
           id: "C.i",
-          title: "{{Construct}} a logical plan",
+          title: "{{Construct}} a logical plan that {{describes}} your use of time",
           instructions:
             "{{Construct}} a logical plan that considers time and resources with real precision, minimal teacher guidance, sufficient for a peer to follow independently.",
           rubricSummary:
@@ -154,7 +154,7 @@ export const grade9: GradeContent = {
         },
         {
           id: "C.ii",
-          title: "{{Demonstrate}} technical skills",
+          title: "{{Demonstrate}} excellent technical skills",
           instructions:
             "{{Demonstrate}} excellent technical skills, choosing your own materials with minimal guidance and pushing your technique beyond what you've already mastered.",
           rubricSummary:
@@ -168,7 +168,7 @@ export const grade9: GradeContent = {
         },
         {
           id: "C.iii",
-          title: "Follow the plan to {{create}} the solution",
+          title: "Follow your plan to {{create}} a solution that works",
           instructions:
             "Follow your plan to {{create}} a solution that functions as intended, adapting where necessary and documenting your reasoning as you go, with minimal check ins.",
           rubricSummary:
@@ -182,7 +182,7 @@ export const grade9: GradeContent = {
         },
         {
           id: "C.iv",
-          title: "{{Justify}} changes made to the design",
+          title: "Fully {{justify}} the changes you made",
           instructions:
             "{{Explain}} and {{justify}} the changes you made to your design and plan, connecting each one to evidence from the building process, in a way that would satisfy a skeptical reader.",
           rubricSummary:
@@ -202,7 +202,7 @@ export const grade9: GradeContent = {
       strands: [
         {
           id: "D.i",
-          title: "{{Design}} testing methods",
+          title: "{{Design}} detailed testing methods that generate data",
           instructions:
             "{{Design}} detailed, relevant testing methods that generate real data, chosen with minimal guidance to match how your target audience would actually use the solution.",
           rubricSummary:
@@ -216,7 +216,7 @@ export const grade9: GradeContent = {
         },
         {
           id: "D.ii",
-          title: "{{Evaluate}} the success of the solution",
+          title: "Critically {{evaluate}} how successful your solution was",
           instructions:
             "{{Evaluate}} the success of the solution against your design specification, weighing the test results critically rather than accepting them at face value.",
           rubricSummary:
@@ -244,7 +244,7 @@ export const grade9: GradeContent = {
         },
         {
           id: "D.iv",
-          title: "{{Explain}} the impact of the solution",
+          title: "{{Explain}} the impact of your solution",
           instructions:
             "{{Explain}} the impact of the solution on your target audience with specific, checkable detail, and be honest about where the impact might be smaller than you'd hoped.",
           rubricSummary:
