@@ -159,9 +159,9 @@ export const grade10: GradeContent = {
           rubricSummary:
             "Excellent work {{demonstrates}} excellent technical skill, including techniques the student sought out and learned independently, beyond classroom instruction. Support this with your own photographic or screenshot evidence in your Process Journal, not just a written account.",
           citation: {
-            refId: "meyerrosegordon2014",
+            refId: "cast2024udl",
             framing:
-              "Meyer, Rose, and Gordon (2014) argue that flexibility in tools and methods, not just access to more of them, drives stronger technical performance. Their framework is built primarily around learning differences and accessibility, so it's worth asking whether the same logic applies as cleanly when the goal is pushing technical skill to an expert level.",
+              "The CAST Universal Design for Learning Guidelines (2024) treat flexibility in tools and methods, not just access to more of them, as central to stronger performance. The guidelines are built primarily around learning differences and accessibility, so it's worth asking whether that same logic holds as cleanly when the goal is pushing technical skill to an expert level.",
           },
           reflectionQuestion: "What technique did you have to teach yourself, and how do you know you did it correctly?",
         },
@@ -187,9 +187,9 @@ export const grade10: GradeContent = {
           rubricSummary:
             "Excellent work fully {{justifies}} changes with precise evidence and reasoning, anticipating and answering why a different choice wasn't made instead.",
           citation: {
-            refId: "meyerrosegordon2014",
+            refId: "novak2023equity",
             framing:
-              "The same UDL framework (Meyer, Rose, & Gordon, 2014) treats adaptation partway through the process as evidence of a responsive maker rather than poor planning. That framing is a deliberate choice within UDL's own philosophy. A more traditional engineering perspective might instead treat frequent design changes as a sign the planning phase needed more rigor. Which reading fits your project better?",
+              "Novak and Rodriguez (2023) argue that UDL's real purpose is equity: giving every student, not just those who already work well independently, genuine room to adapt their approach as they go, as long as they can {{justify}} the change. That framing is a deliberate stance, not a neutral fact. A more traditional engineering perspective might instead treat frequent design changes as a sign the planning phase needed more rigor. Which reading fits your project better?",
           },
           reflectionQuestion: "If a stricter reviewer treated every change as a planning failure, how would you argue back?",
         },

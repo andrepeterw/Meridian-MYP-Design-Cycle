@@ -160,9 +160,9 @@ export const grade9: GradeContent = {
           rubricSummary:
             "Strong work {{demonstrates}} excellent, independent technical skill, including at least one technique that was genuinely new or challenging for you. Back this up with your own photo or screenshot evidence in your Process Journal.",
           citation: {
-            refId: "meyerrosegordon2014",
+            refId: "cast2024udl",
             framing:
-              "Meyer, Rose, and Gordon (2014) argue that real choice over materials and methods, not just access to them, is what drives stronger technical performance. Choosing your own approach, rather than following a single prescribed method, is central to their argument.",
+              "The CAST Universal Design for Learning Guidelines (2024) build their framework around giving learners genuine options for action and expression, not just access to more tools. Choosing your own approach, rather than following a single prescribed method, is central to that principle.",
           },
           reflectionQuestion: "What's the most difficult technical decision you made independently this strand?",
         },
@@ -188,9 +188,9 @@ export const grade9: GradeContent = {
           rubricSummary:
             "Strong work {{justifies}} changes with specific evidence and reasoning strong enough to convince someone who wasn't there while you built.",
           citation: {
-            refId: "meyerrosegordon2014",
+            refId: "novak2023equity",
             framing:
-              "The same UDL research (Meyer, Rose, & Gordon, 2014) frames adaptation partway through the process as a sign of a responsive, self directed maker. Being able to {{justify}} those changes clearly is part of what distinguishes thoughtful adaptation from simply giving up on the original plan.",
+              "Novak and Rodriguez (2023) frame UDL as an equity tool, not just a checklist: every student, regardless of where they started, deserves real room to adapt their approach as they learn more. Being able to {{justify}} those changes clearly is part of what distinguishes thoughtful adaptation from simply giving up on the original plan.",
           },
           reflectionQuestion: "Which change would be hardest to {{justify}} to someone who only saw your original plan?",
         },

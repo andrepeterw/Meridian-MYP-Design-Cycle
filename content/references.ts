@@ -76,9 +76,22 @@ export const references: Reference[] = [
     url: "https://doi.org/10.1080/2331186X.2023.2218191",
   },
   {
-    id: "meyerrosegordon2014",
-    authorYear: "Meyer, Rose, & Gordon, 2014",
-    apa: "Meyer, A., Rose, D. H., & Gordon, D. (2014). *Universal design for learning: Theory and practice*. CAST Professional Publishing.",
+    id: "cast2024udl",
+    authorYear: "CAST, 2024",
+    apa: "CAST. (2024). *CAST Universal Design for Learning Guidelines* (Version 3.0).",
+    url: "https://udlguidelines.cast.org",
+  },
+  {
+    id: "novak2023equity",
+    authorYear: "Novak & Rodriguez, 2023",
+    apa: "Novak, K., & Rodriguez, K. (2023, June 15). Universal Design for Learning and equity. *Edutopia*.",
+    url: "https://www.edutopia.org/article/universal-design-learning-promotes-equity/",
+  },
+  {
+    id: "rao2016udl",
+    authorYear: "Rao & Meo, 2016",
+    apa: "Rao, K., & Meo, G. (2016). Using Universal Design for Learning to design standards-based lessons. *SAGE Open*, *6*(4).",
+    url: "https://doi.org/10.1177/2158244016680688",
   },
   {
     id: "ritchhart2008",

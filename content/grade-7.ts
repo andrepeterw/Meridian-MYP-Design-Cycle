@@ -158,9 +158,9 @@ export const grade7: GradeContent = {
           rubricSummary:
             "Strong work shows satisfactory to competent technical skill, with visible care and control, especially in a technique that was new to you. Include a photo or screenshot of yourself using the technique as evidence in your Process Journal.",
           citation: {
-            refId: "meyerrosegordon2014",
+            refId: "cast2024udl",
             framing:
-              "UDL research (Meyer, Rose, & Gordon, 2014) shows that giving students some choice in tools and methods improves the quality of the technical work they produce.",
+              "The CAST Universal Design for Learning Guidelines (2024) explain that giving learners real choice in the tools and methods they use, instead of one fixed way for everyone, leads to stronger results.",
           },
           reflectionQuestion: "What technique took the most practice to get right?",
         },
@@ -186,9 +186,9 @@ export const grade7: GradeContent = {
           rubricSummary:
             "Strong work {{outlines}} more than one change with real reasons, showing that changes were thought through, not random.",
           citation: {
-            refId: "meyerrosegordon2014",
+            refId: "novak2023equity",
             framing:
-              "The same UDL research (Meyer, Rose, & Gordon, 2014) treats these adjustments made partway through a build as a sign of active problem solving, not a failure to plan well.",
+              "Novak and Rodriguez (2023) write about UDL as a way to make learning fairer for every student, partly by treating changes to a plan as a normal part of learning, not something to apologize for.",
           },
           reflectionQuestion: "Which change are you most proud you made, even though it wasn't part of the original plan?",
         },

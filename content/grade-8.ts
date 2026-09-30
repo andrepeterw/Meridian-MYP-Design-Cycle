@@ -156,9 +156,9 @@ export const grade8: GradeContent = {
           rubricSummary:
             "Strong work shows competent to excellent control of tools and materials, with technique that's clearly been practiced, not just attempted once. Document this with photo or screenshot evidence in your Process Journal, not just a description.",
           citation: {
-            refId: "meyerrosegordon2014",
+            refId: "cast2024udl",
             framing:
-              "Meyer, Rose, and Gordon (2014) developed Universal Design for Learning around the idea that students produce their best work when given multiple ways to act and express what they know. In a design context, that means real choice over tools and methods tends to produce stronger technical outcomes than a one size fits all approach.",
+              "The CAST Universal Design for Learning Guidelines (2024) call for offering learners multiple ways to act and express what they know, rather than one required method. In a design context, that principle suggests real choice over tools and technique tends to produce stronger technical work than a one size fits all approach.",
           },
           reflectionQuestion: "Which tool or method did you choose because it actually suits how you work, not just because it was available?",
         },
@@ -184,9 +184,9 @@ export const grade8: GradeContent = {
           rubricSummary:
             "Strong work {{explains}} more than one change with reasoning that shows real problem solving, not just \"it didn't work.\"",
           citation: {
-            refId: "meyerrosegordon2014",
+            refId: "novak2023equity",
             framing:
-              "The same UDL framework (Meyer, Rose, & Gordon, 2014) treats adjusting a plan partway through the process as evidence of active, responsive thinking rather than a failure to plan correctly. {{Explaining}} those changes well is itself a skill the framework values.",
+              "Novak and Rodriguez (2023) argue that UDL is fundamentally about fairness: giving every student real room to adjust their approach as they learn, instead of penalizing anyone whose first plan wasn't perfect. Being able to {{explain}} why you adjusted it is evidence of that kind of learning, not a mistake to hide.",
           },
           reflectionQuestion: "Which change taught you something you'll apply to your next project?",
         },

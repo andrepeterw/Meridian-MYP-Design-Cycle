@@ -160,9 +160,9 @@ export const grade6: GradeContent = {
           rubricSummary:
             "Strong work shows careful, controlled use of tools and materials, not rushed or careless. Take a photo while you work to show this in your Process Journal.",
           citation: {
-            refId: "meyerrosegordon2014",
+            refId: "cast2024udl",
             framing:
-              "Universal Design for Learning research (Meyer, Rose, & Gordon, 2014) shows that students do their best technical work when they're allowed to choose tools and methods that fit how they work best.",
+              "The CAST Universal Design for Learning Guidelines (2024) say people learn and work best when they get to choose the tools and methods that actually fit them, instead of only one way being allowed.",
           },
           reflectionQuestion: "What's one technical skill you got better at just by practicing it today?",
         },
@@ -188,9 +188,9 @@ export const grade6: GradeContent = {
           rubricSummary:
             "Strong work names a real change and gives an honest reason for it, even if the reason is \"it broke.\"",
           citation: {
-            refId: "meyerrosegordon2014",
+            refId: "novak2023equity",
             framing:
-              "The same UDL research (Meyer, Rose, & Gordon, 2014) treats changing your plan partway through a project as a normal, expected part of making, not a mistake to hide.",
+              "An article on UDL and fairness (Novak & Rodriguez, 2023) says it's fine, and often better, for a plan to change as you learn more while making something. Changing your mind isn't a mistake to hide.",
           },
           reflectionQuestion: "Do you think this change made your solution better, worse, or just different?",
         },
