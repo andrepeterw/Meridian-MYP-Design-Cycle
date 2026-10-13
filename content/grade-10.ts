@@ -67,7 +67,7 @@ export const grade10: GradeContent = {
             framing:
               "Dang's (2025) findings suggest that writing for a real audience, rather than solely for assessment, raises the quality of student work. Since the study relies on self reported engagement rather than directly measured writing quality, you might reasonably ask how much of that improvement is real versus perceived, and test that on your own brief.",
           },
-          reflectionQuestion: "Would your actual client accept this brief, or would they ask you to revise it first?",
+          reflectionQuestion: "What's the weakest sentence in your brief, the one your actual client would push back on first?",
         },
       ],
     },
@@ -129,7 +129,7 @@ export const grade10: GradeContent = {
             framing:
               "The same project based learning review (Condliffe et al., 2017) found detailed planning correlated with smoother execution, though correlation in observational classroom research doesn't prove that better planning caused the smoother build, rather than more capable students simply planning more thoroughly in the first place. Consider which explanation better fits your own experience.",
           },
-          reflectionQuestion: "Could a professional in this field actually build from your plan, or only another student?",
+          reflectionQuestion: "What's missing from your plan that a professional would never leave out?",
         },
       ],
     },
@@ -177,7 +177,7 @@ export const grade10: GradeContent = {
             framing:
               "Almeqdad and colleagues (2023) found flexible, adaptive building processes associated with stronger outcomes across the UDL studies in their meta analysis. Meta analyses combine very different studies and contexts, though, so it's fair to ask whether \"flexibility\" means the same thing in a hands on design project as it does in the classroom studies they reviewed.",
           },
-          reflectionQuestion: "Would this solution hold up to use outside of a school context, by someone who's never met you?",
+          reflectionQuestion: "What would have to change for this solution to hold up outside of a school context, with someone who's never met you?",
         },
         {
           id: "C.iv",

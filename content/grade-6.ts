@@ -39,7 +39,7 @@ export const grade6: GradeContent = {
               "A recent study (Dang, 2025) found that students learn more when they get to choose what to look into themselves, instead of being told exactly what to research.",
           },
           reflectionQuestion:
-            "Did picking your own research question change how interested you are in the problem?",
+            "How did picking your own research question change how interested you are in the problem?",
         },
         {
           id: "A.iii",
@@ -68,7 +68,7 @@ export const grade6: GradeContent = {
               "The same research on student choice (Dang, 2025) found that students understand a task more deeply when they write it in their own words instead of copying a template exactly.",
           },
           reflectionQuestion:
-            "If you read your design brief back tomorrow, would it remind you why this problem matters?",
+            "If you read your design brief back tomorrow, which sentence would remind you why this problem matters?",
         },
       ],
     },
@@ -116,7 +116,7 @@ export const grade6: GradeContent = {
             framing:
               "A study on how people experience learning and design (Meyer, 2024) points out that the reasons something \"feels right\" are worth noticing, not just whether it works.",
           },
-          reflectionQuestion: "Is your reason for choosing this design about how it works, how it looks, or both?",
+          reflectionQuestion: "How much of your reason for choosing this design is about how it works, and how much is about how it looks?",
         },
         {
           id: "B.iv",
@@ -130,7 +130,7 @@ export const grade6: GradeContent = {
             framing:
               "The same project based learning research (Condliffe et al., 2017) found that students who plan out the details before building run into fewer problems once they start.",
           },
-          reflectionQuestion: "If you handed this drawing to a classmate, could they build your idea without asking you questions?",
+          reflectionQuestion: "If you handed this drawing to a classmate, what's the first question they'd have to ask you?",
         },
       ],
     },
@@ -178,7 +178,7 @@ export const grade6: GradeContent = {
             framing:
               "A large review of Universal Design for Learning studies (Almeqdad et al., 2023) found that students build stronger final products when they're allowed some flexibility in how they follow a plan, instead of being locked into every detail.",
           },
-          reflectionQuestion: "Did the actual building process match what you imagined when you made the plan?",
+          reflectionQuestion: "How did the actual building process differ from what you imagined when you made the plan?",
         },
         {
           id: "C.iv",
@@ -192,7 +192,7 @@ export const grade6: GradeContent = {
             framing:
               "An article on UDL and fairness (Novak & Rodriguez, 2023) says it's fine, and often better, for a plan to change as you learn more while making something. Changing your mind isn't a mistake to hide.",
           },
-          reflectionQuestion: "Do you think this change made your solution better, worse, or just different?",
+          reflectionQuestion: "What makes you say this change made your solution better, worse, or just different?",
         },
       ],
     },
@@ -254,7 +254,7 @@ export const grade6: GradeContent = {
             framing:
               "Writers on education theory (Alpaydin & Demirli, 2022) argue that the point of {{evaluating}} work isn't just to grade it, but to understand what real difference it makes.",
           },
-          reflectionQuestion: "Would the person you {{designed}} this for agree with what you just wrote?",
+          reflectionQuestion: "What would the person you {{designed}} this for say is missing from what you just wrote?",
         },
       ],
     },

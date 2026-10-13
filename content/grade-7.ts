@@ -38,7 +38,7 @@ export const grade7: GradeContent = {
             framing:
               "Research on student choice (Dang, 2025) found that students who help decide what to investigate stay more engaged with a project than students who are just handed a list.",
           },
-          reflectionQuestion: "Would you have {{prioritized}} these the same way a week ago?",
+          reflectionQuestion: "What would have changed about this priority order if you'd made it a week ago?",
         },
         {
           id: "A.iii",
@@ -52,7 +52,7 @@ export const grade7: GradeContent = {
             framing:
               "The See Think Wonder routine (Ritchhart & Perkins, 2008) reminds you to {{describe}} exactly what you observe before deciding what you think about it.",
           },
-          reflectionQuestion: "Did looking at a second product change your opinion of the first one?",
+          reflectionQuestion: "How did looking at a second product change your opinion of the first one?",
         },
         {
           id: "A.iv",
@@ -114,7 +114,7 @@ export const grade7: GradeContent = {
             framing:
               "Research on the aesthetics of learning (Meyer, 2024) suggests that noticing why a design feels satisfying, not just functional, is a real and valuable part of choosing it.",
           },
-          reflectionQuestion: "Is there a criterion your chosen design doesn't fully meet yet?",
+          reflectionQuestion: "Which criterion does your chosen design come closest to not meeting?",
         },
         {
           id: "B.iv",
@@ -128,7 +128,7 @@ export const grade7: GradeContent = {
             framing:
               "The same project based learning research (Condliffe et al., 2017) found that detailed planning drawings reduce the number of problems students run into during building.",
           },
-          reflectionQuestion: "If you built this exactly as drawn, would it actually work?",
+          reflectionQuestion: "If you handed this plan to a partner to build, what's the first question they would ask you?",
         },
       ],
     },
@@ -176,7 +176,7 @@ export const grade7: GradeContent = {
             framing:
               "A UDL meta analysis (Almeqdad et al., 2023) found that letting students adjust a plan slightly during building, rather than following it rigidly, often leads to a better final product.",
           },
-          reflectionQuestion: "Was there a moment you were tempted to abandon the plan completely? What kept you going?",
+          reflectionQuestion: "What was the moment you were most tempted to abandon the plan, and what kept you going?",
         },
         {
           id: "C.iv",

@@ -26,7 +26,7 @@ export const grade9: GradeContent = {
             counterpointRefId: "kirschner2006",
           },
           reflectionQuestion:
-            "Has anything about your target audience's real needs changed how you'd {{justify}} this problem, compared to when you first picked it?",
+            "What has changed about your target audience's real needs that would change how you'd {{justify}} this problem now?",
         },
         {
           id: "A.ii",
@@ -68,7 +68,7 @@ export const grade9: GradeContent = {
             framing:
               "The same study on student agency (Dang, 2025) found that when students write for a real, external audience rather than just their teacher, the quality and seriousness of their writing tends to rise. Framing your brief for a client, not just for assessment, is likely to sharpen it.",
           },
-          reflectionQuestion: "If your target audience read this brief, would they recognize themselves in it?",
+          reflectionQuestion: "What's the one detail in your brief that proves you actually know your target audience?",
         },
       ],
     },

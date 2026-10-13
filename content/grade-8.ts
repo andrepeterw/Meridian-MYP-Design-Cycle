@@ -50,7 +50,7 @@ export const grade8: GradeContent = {
             framing:
               "The See Think Wonder routine (Ritchhart & Perkins, 2008) is {{designed}} to slow down first impressions so you notice more detail before forming an opinion. Applied to a group of products, it pushes you to compare what you actually observe across all of them, not just react to the first one.",
           },
-          reflectionQuestion: "Did comparing multiple products change which features you now think actually matter?",
+          reflectionQuestion: "How did comparing multiple products change which features you now think actually matter?",
         },
         {
           id: "A.iv",
@@ -64,7 +64,7 @@ export const grade8: GradeContent = {
             framing:
               "The same agency research (Dang, 2025) found that when students author a document like this themselves, rather than filling in a fixed template, they engage more critically with what they've actually learned. That extra ownership tends to show up as a more thoughtful, connected final brief.",
           },
-          reflectionQuestion: "If a stranger read only your brief, would they understand why you made every choice in it?",
+          reflectionQuestion: "If a stranger read only your brief, what's the one thing they'd still need you to {{explain}}?",
         },
       ],
     },
@@ -112,7 +112,7 @@ export const grade8: GradeContent = {
             framing:
               "Meyer (2024) examines how aesthetic experience, the sense that something is \"right\" beyond just functional, shapes how people engage with what they make. The study suggests that being able to name why a design feels satisfying is itself a meaningful part of the design process, not just decoration on top of the reasoning.",
           },
-          reflectionQuestion: "Is any part of your justification really about how the design feels, rather than what the specification requires?",
+          reflectionQuestion: "Which part of your justification is really about how the design feels, rather than what the specification requires?",
         },
         {
           id: "B.iv",
