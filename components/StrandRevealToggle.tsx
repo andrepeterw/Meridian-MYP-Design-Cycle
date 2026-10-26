@@ -22,7 +22,7 @@ export function StrandRevealToggle({
         className="text-sm font-medium underline underline-offset-2"
         style={{ color }}
       >
-        Click here to see what a level 1 to 8 answer looks like.
+        Click here to see the Rubric
       </button>
       <AnimatePresence initial={false}>
         {open && (
