@@ -23,7 +23,8 @@ export const commandTerms: CommandTerm[] = [
     slug: "construct",
     term: "Construct",
     definition: "Lay information out in a diagram or a clear, logical structure.",
-    forms: ["construct", "constructs", "constructed", "constructing"],
+    // "build" is the student-friendly word used in strand titles in place of "construct".
+    forms: ["construct", "constructs", "constructed", "constructing", "build", "builds", "built", "building"],
   },
   {
     slug: "create",

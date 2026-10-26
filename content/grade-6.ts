@@ -78,7 +78,7 @@ export const grade6: GradeContent = {
       strands: [
         {
           id: "B.i",
-          title: "{{List}} your success criteria",
+          title: "{{Develop}} a list of your success criteria",
           instructions:
             "Make a checklist of at least three things your solution must do to count as successful. Keep each one short and clear enough that a friend could check it off.",
           rubricSummary:

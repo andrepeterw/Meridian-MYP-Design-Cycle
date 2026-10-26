@@ -78,7 +78,7 @@ export const grade9: GradeContent = {
       strands: [
         {
           id: "B.i",
-          title: "{{State}} your design specifications clearly",
+          title: "{{Develop}} design specifications that clearly {{state}} your success criteria",
           instructions:
             "{{Develop}} a design specification against a checklist of success criteria, with only a minimal template, that clearly {{states}} what your solution must achieve for your target audience, based on your research data.",
           rubricSummary:

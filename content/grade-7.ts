@@ -28,7 +28,7 @@ export const grade7: GradeContent = {
         },
         {
           id: "A.ii",
-          title: "Build a research plan that {{states}} and {{prioritizes}} what you need",
+          title: "{{Build}} a research plan that states and prioritizes what you need",
           instructions:
             "With your partner, or on your own, {{list}} four or five things you'd need to find out. Put them in order from most to least important, and {{describe}} in one sentence why your top pick comes first.",
           rubricSummary:
@@ -76,7 +76,7 @@ export const grade7: GradeContent = {
       strands: [
         {
           id: "B.i",
-          title: "{{Outline}} your design specification, based on your data",
+          title: "{{Develop}} a design specification based on your data",
           instructions:
             "Write a list of four or five success criteria for your solution. Make each one specific enough that you could check whether you met it: a number, a time, a size, not just a feeling.",
           rubricSummary:
