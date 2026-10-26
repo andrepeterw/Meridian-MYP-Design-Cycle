@@ -105,7 +105,7 @@ export const achievementLevelsByStrand: Partial<Record<StrandId, StrandAchieveme
       { band: "7–8", commandTerm: "Develop", description: "Puts together a design brief that shows what your research found and why it matters." },
     ],
     year5: [
-      { band: "1–2", commandTerm: "State", description: "Names what your research found, inside a basic design brief." },
+      { band: "1–2", commandTerm: "Develop", description: "Puts together a basic design brief that names what your research found." },
       { band: "3–4", commandTerm: "Develop", description: "Puts together a design brief that gives a short summary of your research findings." },
       { band: "5–6", commandTerm: "Develop", description: "Puts together a design brief that shows what your research found and why it matters." },
       { band: "7–8", commandTerm: "Develop", description: "Puts together a detailed design brief that sums up your research findings clearly." },
@@ -167,8 +167,8 @@ export const achievementLevelsByStrand: Partial<Record<StrandId, StrandAchieveme
     year5: [
       NOT_DESCRIBED_AT_1_2,
       { band: "3–4", commandTerm: "Justify", description: "Gives reasons for choosing your design, linked to your specification." },
-      { band: "5–6", commandTerm: "Present", description: "Shows your chosen design, and justifies choosing it, linked to your specification." },
-      { band: "7–8", commandTerm: "Present", description: "Shows your chosen design, and justifies your choice fully and critically, with detailed reference to your specification." },
+      { band: "5–6", commandTerm: "Present and justify", description: "Shows your chosen design, and justifies choosing it, linked to your specification." },
+      { band: "7–8", commandTerm: "Present and justify fully", description: "Shows your chosen design, and justifies your choice fully and critically, with detailed reference to your specification." },
     ],
   },
   "B.iv": {
