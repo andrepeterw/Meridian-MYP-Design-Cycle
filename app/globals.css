@@ -115,3 +115,19 @@ body {
   animation-fill-mode: forwards;
   will-change: transform, opacity;
 }
+
+/* Google Translate (loaded only when a language is chosen): hide its banner and
+   hover popups so the globe menu in the header is the only control. */
+body {
+  top: 0 !important;
+}
+.skiptranslate iframe,
+iframe.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}

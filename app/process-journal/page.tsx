@@ -19,7 +19,7 @@ export default function ProcessJournalPage() {
         <ol className="space-y-3">
           {processJournalContent.setup.steps.map((step, i) => (
             <li key={i} className="flex gap-3 leading-relaxed text-[var(--ink)]/85">
-              <span className="font-bold text-[var(--ink)]/40">{i + 1}.</span>
+              <span className="shrink-0 whitespace-nowrap font-bold text-[var(--ink)]/40">{i + 1}.</span>
               <span>{step}</span>
             </li>
           ))}

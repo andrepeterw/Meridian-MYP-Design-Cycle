@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MeridianMark } from "./MeridianMark";
+import { LanguageMenu } from "./LanguageMenu";
 
 export function SiteHeader() {
   return (
@@ -19,6 +20,7 @@ export function SiteHeader() {
           <Link href="/command-terms" className="text-[var(--ink)]/80 hover:text-[var(--ink)]">
             Command Terms
           </Link>
+          <LanguageMenu />
         </nav>
       </div>
     </header>
