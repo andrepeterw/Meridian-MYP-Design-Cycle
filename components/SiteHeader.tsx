@@ -20,6 +20,9 @@ export function SiteHeader() {
           <Link href="/command-terms" className="text-[var(--ink)]/80 hover:text-[var(--ink)]">
             Command Terms
           </Link>
+          <Link href="/about" className="text-[var(--ink)]/80 hover:text-[var(--ink)]">
+            About
+          </Link>
           <LanguageMenu />
         </nav>
       </div>

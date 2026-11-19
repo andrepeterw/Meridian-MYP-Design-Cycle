@@ -8,7 +8,7 @@ export const homeContent = {
   whyThisExists:
     "The Design Cycle is drawn as four stages, but real design work rarely moves in a straight line. Curriculum theory has long recognized that a written curriculum and a lived one are different things (Alvior, 2014). This route tries to close that gap by making the cycle feel like something you walk through, not a diagram you memorize.",
   howToUse: [
-    "Pick your grade above. Each grade page has the same four criteria, but the instructions, expectations, and research get more independent as you go up.",
+    "Pick your grade on the Home page. Each grade page has the same four criteria, but the instructions, expectations, and research get more independent as you go up.",
     "Scroll from Criterion A down to Criterion D, reading each strand as you reach it.",
     "Answer the reflection question at the end of every strand before moving on, written in your Process Journal.",
     "It's fine to scroll back up. The Design Cycle is iterative: if a later strand makes you rethink an earlier one, go back and revise it.",
