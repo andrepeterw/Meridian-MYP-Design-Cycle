@@ -1,11 +1,14 @@
+import { useId } from "react";
 import { AISL } from "@/content/theme";
 
 /** An original mark for Meridian: a globe with its own meridian line, gradient in the four criterion colors. Not the AISL crest. */
 export function MeridianMark({ className }: { className?: string }) {
+  // Unique per copy, since several marks can be on one page.
+  const gradientId = useId();
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
       <defs>
-        <linearGradient id="meridian-mark-gradient" x1="16" y1="2" x2="16" y2="30" gradientUnits="userSpaceOnUse">
+        <linearGradient id={gradientId} x1="16" y1="2" x2="16" y2="30" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor={AISL.blue} />
           <stop offset="33%" stopColor={AISL.orange} />
           <stop offset="66%" stopColor={AISL.green} />
@@ -17,7 +20,7 @@ export function MeridianMark({ className }: { className?: string }) {
       <path
         d="M16 3 C 9 10, 23 22, 16 29"
         fill="none"
-        stroke="url(#meridian-mark-gradient)"
+        stroke={`url(#${gradientId})`}
         strokeWidth="2.25"
         strokeLinecap="round"
       />

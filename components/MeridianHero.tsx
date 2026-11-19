@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { AISL, criterionTheme, gradeAccent } from "@/content/theme";
 import type { CriterionKey, Grade } from "@/content/types";
+import { lerpColor } from "@/lib/color";
+import { MeridianMark } from "./MeridianMark";
 
 type Phase = "scatter" | "line" | "circle";
 
@@ -38,15 +40,52 @@ const STRANDS: Strand[] = [
 const GRADES: Grade[] = [6, 7, 8, 9, 10];
 
 const TOTAL_CARDS = STRANDS.length;
-const MAX_SCROLL = 3000;
 // Scrolling past this finishes the circle-to-arc morph and reveals the buttons.
 const REVEAL_SCROLL = 600;
+// How much scrolling turns the arc by one card. The arc has no end: it keeps
+// turning, and A.i comes round again after D.iv.
+const SCROLL_PER_CARD = 180;
 const KEY_STEP = 150;
 const CARD_WIDTH = 60;
 const CARD_HEIGHT = 85;
 const FALLBACK_HEADER_HEIGHT = 53;
 
 const lerp = (start: number, end: number, t: number) => start * (1 - t) + end * t;
+
+// Rotate by the shortest way round, so a card never spins a full turn just
+// because its two angles sit on opposite sides of 0 and 360.
+const lerpAngle = (start: number, end: number, t: number) =>
+  start + (((end - start + 540) % 360) - 180) * t;
+
+// The circle opens into the arc card by card, A.i first and D.iv last, so the
+// Criterion A cards lead the animation.
+const MORPH_STAGGER = 0.5;
+const cardMorph = (morph: number, index: number) => {
+  const delay = (index / (TOTAL_CARDS - 1)) * MORPH_STAGGER;
+  return Math.min(1, Math.max(0, (morph - delay) / (1 - MORPH_STAGGER)));
+};
+
+// The thread behind the cards runs the same four colours, in the same order, as
+// the ribbon in the Meridian mark. It is coloured along the strand order (not
+// top to bottom) so each stretch matches the cards it passes behind.
+const THREAD_STOPS = [AISL.blue, AISL.orange, AISL.green, AISL.red];
+const THREAD_COLORS = Array.from({ length: TOTAL_CARDS - 1 }, (_, i) => {
+  const along = ((i + 0.5) / (TOTAL_CARDS - 1)) * (THREAD_STOPS.length - 1);
+  const stop = Math.min(Math.floor(along), THREAD_STOPS.length - 2);
+  return lerpColor(THREAD_STOPS[stop], THREAD_STOPS[stop + 1], along - stop);
+});
+
+type Point = { x: number; y: number };
+
+// One piece of a smooth (Catmull-Rom) curve from p1 to p2, shaped by its two
+// neighbours, so the pieces join into a single flowing line.
+function curveBetween(p0: Point, p1: Point, p2: Point, p3: Point) {
+  const c1x = p1.x + (p2.x - p0.x) / 6;
+  const c1y = p1.y + (p2.y - p0.y) / 6;
+  const c2x = p2.x - (p3.x - p1.x) / 6;
+  const c2y = p2.y - (p3.y - p1.y) / 6;
+  return `M ${p1.x},${p1.y} C ${c1x},${c1y} ${c2x},${c2y} ${p2.x},${p2.y}`;
+}
 
 // A fixed, repeatable scatter (rather than Math.random) so rendering stays pure
 // and looks the same on every visit.
@@ -123,9 +162,11 @@ function GradeLinks() {
 interface FlipCardProps {
   strand: Strand;
   target: { x: number; y: number; rotation: number; scale: number; opacity: number };
+  index: number;
+  onPositionUpdate: (index: number, x: number, y: number) => void;
 }
 
-function FlipCard({ strand, target }: FlipCardProps) {
+function FlipCard({ strand, target, index, onPositionUpdate }: FlipCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const { color, tint } = criterionTheme[strand.criterion];
 
@@ -138,6 +179,13 @@ function FlipCard({ strand, target }: FlipCardProps) {
         scale: target.scale,
         opacity: target.opacity,
       }}
+      // Reports where the card actually is (mid-spring), so the thread follows
+      // the card itself and not just where it is headed.
+      onUpdate={(latest) => {
+        const x = typeof latest.x === "number" ? latest.x : target.x;
+        const y = typeof latest.y === "number" ? latest.y : target.y;
+        onPositionUpdate(index, x, y);
+      }}
       transition={{ type: "spring", stiffness: 40, damping: 15 }}
       style={{
         position: "absolute",
@@ -145,6 +193,7 @@ function FlipCard({ strand, target }: FlipCardProps) {
         height: CARD_HEIGHT,
         transformStyle: "preserve-3d",
         perspective: "1000px",
+        zIndex: 1,
       }}
     >
       {/* A real button, so the card is reachable and operable by keyboard. */}
@@ -217,17 +266,23 @@ function MeridianHeroStatic() {
 function MeridianHeroAnimated({ height }: { height: string }) {
   const [introPhase, setIntroPhase] = useState<Phase>("scatter");
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
+  const [contentBottom, setContentBottom] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const container = containerRef.current;
+    const content = contentRef.current;
     if (!container) return;
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        setContainerSize({ width: entry.contentRect.width, height: entry.contentRect.height });
-      }
-    });
+    // Watches the hero and the grade-button block (which wraps differently on
+    // narrow screens or when translated), so the logo below it stays centred in the gap.
+    const measure = () => {
+      setContainerSize({ width: container.clientWidth, height: container.clientHeight });
+      if (content) setContentBottom(content.offsetTop + content.offsetHeight);
+    };
+    const observer = new ResizeObserver(measure);
     observer.observe(container);
+    if (content) observer.observe(content);
     return () => observer.disconnect();
   }, []);
 
@@ -239,7 +294,7 @@ function MeridianHeroAnimated({ height }: { height: string }) {
     if (!container) return;
 
     const scrollTo = (value: number) => {
-      scrollRef.current = Math.min(Math.max(value, 0), MAX_SCROLL);
+      scrollRef.current = Math.max(value, 0);
       virtualScroll.set(scrollRef.current);
     };
 
@@ -269,7 +324,6 @@ function MeridianHeroAnimated({ height }: { height: string }) {
         PageUp: -REVEAL_SCROLL,
       };
       if (e.key === "Home") scrollTo(0);
-      else if (e.key === "End") scrollTo(MAX_SCROLL);
       else if (e.key in steps) scrollTo(scrollRef.current + steps[e.key]);
       else return;
       e.preventDefault();
@@ -304,7 +358,7 @@ function MeridianHeroAnimated({ height }: { height: string }) {
 
   const morphProgress = useTransform(virtualScroll, [0, REVEAL_SCROLL], [0, 1]);
   const smoothMorph = useSpring(morphProgress, { stiffness: 40, damping: 20 });
-  const scrollRotate = useTransform(virtualScroll, [REVEAL_SCROLL, MAX_SCROLL], [0, 360]);
+  const scrollRotate = useTransform(virtualScroll, (value) => Math.max(0, value - REVEAL_SCROLL));
   const smoothScrollRotate = useSpring(scrollRotate, { stiffness: 40, damping: 20 });
 
   const mouseX = useMotionValue(0);
@@ -349,6 +403,63 @@ function MeridianHeroAnimated({ height }: { height: string }) {
   const contentOpacity = useTransform(smoothMorph, [0.8, 1], [0, 1]);
   const contentY = useTransform(smoothMorph, [0.8, 1], [20, 0]);
 
+  // The thread is drawn straight onto its SVG paths every frame, outside React
+  // state, so following the cards never triggers a re-render.
+  const cardPositions = useRef<Point[]>(STRANDS.map(() => ({ x: 0, y: 0 })));
+  const segmentRefs = useRef<(SVGPathElement | null)[]>([]);
+  const closingRef = useRef<SVGPathElement>(null);
+  const closingGradientRef = useRef<SVGLinearGradientElement>(null);
+
+  const handlePositionUpdate = useCallback((index: number, x: number, y: number) => {
+    cardPositions.current[index] = { x, y };
+  }, []);
+
+  useEffect(() => {
+    const { width, height } = containerSize;
+    if (!width || !height) return;
+    let frameId = 0;
+    const tick = (time: number) => {
+      // A slow ripple keeps the thread gently alive while nobody is scrolling.
+      const points = cardPositions.current.map((p, i) => ({
+        x: width / 2 + p.x,
+        y: height / 2 + p.y + Math.sin(time / 1500 + i * 0.4) * 4,
+      }));
+      const count = points.length;
+      // Where the endless arc wraps, the last card sits at one end of the screen
+      // and the first at the other. That one piece would cut across the whole
+      // screen, so it is hidden (and never used to shape its neighbours).
+      const stretched = (a: Point, b: Point) => Math.abs(a.x - b.x) > width * 1.2;
+      for (let k = 0; k < count; k++) {
+        const from = points[k];
+        const to = points[(k + 1) % count];
+        const before = points[(k + count - 1) % count];
+        const after = points[(k + 2) % count];
+        // Pieces 0 to 14 join neighbouring strands; the last one joins D.iv back round to A.i.
+        const path = k < count - 1 ? segmentRefs.current[k] : closingRef.current;
+        if (!path) continue;
+        if (stretched(from, to)) {
+          path.setAttribute("opacity", "0");
+          continue;
+        }
+        path.setAttribute("opacity", "1");
+        path.setAttribute(
+          "d",
+          curveBetween(stretched(before, from) ? from : before, from, to, stretched(to, after) ? to : after)
+        );
+      }
+      const gradient = closingGradientRef.current;
+      if (gradient) {
+        gradient.setAttribute("x1", String(points[count - 1].x));
+        gradient.setAttribute("y1", String(points[count - 1].y));
+        gradient.setAttribute("x2", String(points[0].x));
+        gradient.setAttribute("y2", String(points[0].y));
+      }
+      frameId = requestAnimationFrame(tick);
+    };
+    frameId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frameId);
+  }, [containerSize]);
+
   // Tabbing to a grade button (before the arc has formed) finishes the morph, so
   // a keyboard user never lands on something they cannot see.
   const revealOnFocus = () => {
@@ -358,14 +469,40 @@ function MeridianHeroAnimated({ height }: { height: string }) {
     }
   };
 
+  // The arc: shared by every card, and by the logo that sits in the space above it.
+  const isMobile = containerSize.width < 768;
+  const spreadAngle = isMobile ? 100 : 130;
+  const step = spreadAngle / (TOTAL_CARDS - 1);
+  const baseRadius = Math.min(containerSize.width, containerSize.height * 1.5);
+  const arcRadius = baseRadius * (isMobile ? 1.4 : 1.1);
+  const arcApexY = containerSize.height * (isMobile ? 0.35 : 0.25);
+  const arcCenterY = arcApexY + arcRadius;
+  const arcScale = isMobile ? 1.4 : 1.8;
+  // How many cards fit on screen either side of the middle of the arc.
+  const visibleHalf =
+    arcRadius > 0
+      ? Math.asin(Math.min(1, containerSize.width / 2 / arcRadius)) / ((step * Math.PI) / 180)
+      : 0;
+  const wrapLimit = visibleHalf + 1.5;
+  // The arc opens with A.i just inside the left edge, so the Criterion A cards come first.
+  const arcFocus = visibleHalf - 0.6 + rotateValue / SCROLL_PER_CARD;
+
   // Keep the title inside the ring of cards instead of running underneath them.
   const ringRadius = Math.min(Math.min(containerSize.width, containerSize.height) * 0.35, 350);
   const titleWidth = Math.max(180, ringRadius * 2 - 130);
+  const ringLogoSize = Math.max(32, Math.min(64, ringRadius * 0.28));
+
+  // After the morph there is a gap between the grade buttons and the top of the
+  // arc; the logo is centred in it (and left out if the screen is too short for it).
+  const arcTop = containerSize.height / 2 + arcApexY - (CARD_HEIGHT * arcScale) / 2;
+  const gap = arcTop - contentBottom;
+  const gapLogoSize = Math.min(96, gap - 40);
+  const gapLogoTop = contentBottom + (gap - gapLogoSize) / 2;
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full touch-none overflow-hidden overscroll-none"
+      className="relative w-full touch-none overflow-clip overscroll-none"
       style={{ height }}
     >
       <div className="flex h-full w-full flex-col items-center justify-center">
@@ -373,6 +510,20 @@ function MeridianHeroAnimated({ height }: { height: string }) {
           className="pointer-events-none absolute top-1/2 z-0 flex -translate-y-1/2 flex-col items-center justify-center text-center"
           style={{ width: titleWidth }}
         >
+          <motion.div
+            aria-hidden="true"
+            initial={{ opacity: 0, y: 20 }}
+            animate={
+              introPhase === "circle" && morphValue < 0.5
+                ? { opacity: 1 - morphValue * 2, y: 0 }
+                : { opacity: 0 }
+            }
+            transition={{ duration: 1 }}
+            className="mb-3"
+            style={{ width: ringLogoSize, height: ringLogoSize }}
+          >
+            <MeridianMark className="h-full w-full" />
+          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
             animate={
@@ -381,7 +532,7 @@ function MeridianHeroAnimated({ height }: { height: string }) {
                 : { opacity: 0, filter: "blur(10px)" }
             }
             transition={{ duration: 1 }}
-            className="text-balance text-2xl font-medium tracking-tight text-[var(--ink)] md:text-4xl"
+            className="text-balance text-xl font-medium tracking-tight text-[var(--ink)] md:text-4xl"
           >
             Meridian: The MYP Design Cycle Route
           </motion.h1>
@@ -398,6 +549,7 @@ function MeridianHeroAnimated({ height }: { height: string }) {
         {/* Rendered from the start so keyboard users can reach it; the opacity is what fades it in. */}
         <motion.div
           id="grades"
+          ref={contentRef}
           onFocusCapture={revealOnFocus}
           style={{ opacity: contentOpacity, y: contentY }}
           className={`absolute top-[8%] z-10 flex flex-col items-center justify-center px-4 text-center ${
@@ -410,11 +562,51 @@ function MeridianHeroAnimated({ height }: { height: string }) {
           <GradeLinks />
         </motion.div>
 
+        {gapLogoSize >= 40 && (
+          <motion.div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 z-10 flex justify-center"
+            style={{ top: gapLogoTop, opacity: contentOpacity }}
+          >
+            <div style={{ width: gapLogoSize, height: gapLogoSize }}>
+              <MeridianMark className="h-full w-full" />
+            </div>
+          </motion.div>
+        )}
+
         <p className="sr-only">
           Use the up and down arrow keys to move the wheel, or Tab to the grade buttons.
         </p>
 
         <div className="relative flex h-full w-full items-center justify-center">
+          {/* Decorative thread behind the cards; the strand codes and names on
+              the cards carry the real content. */}
+          <svg className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
+            <defs>
+              <linearGradient ref={closingGradientRef} id="meridian-thread-closing" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor={AISL.red} />
+                <stop offset="100%" stopColor={AISL.blue} />
+              </linearGradient>
+            </defs>
+            <g
+              fill="none"
+              strokeWidth={2}
+              strokeLinecap="round"
+              style={{ opacity: introPhase === "scatter" ? 0 : 0.55, transition: "opacity 1s ease" }}
+            >
+              <path ref={closingRef} stroke="url(#meridian-thread-closing)" />
+              {THREAD_COLORS.map((color, i) => (
+                <path
+                  key={i}
+                  ref={(element) => {
+                    segmentRefs.current[i] = element;
+                  }}
+                  stroke={color}
+                />
+              ))}
+            </g>
+          </svg>
+
           {STRANDS.map((strand, i) => {
             let target = { x: 0, y: 0, rotation: 0, scale: 1, opacity: 1 };
 
@@ -425,12 +617,13 @@ function MeridianHeroAnimated({ height }: { height: string }) {
               const lineTotalWidth = TOTAL_CARDS * lineSpacing;
               target = { x: i * lineSpacing - lineTotalWidth / 2, y: 0, rotation: 0, scale: 1, opacity: 1 };
             } else {
-              const isMobile = containerSize.width < 768;
               const minDimension = Math.min(containerSize.width, containerSize.height);
 
               const circleRadius = Math.min(minDimension * 0.35, 350);
               const circleScale = isMobile ? 0.8 : 1;
-              const circleAngle = (i / TOTAL_CARDS) * 360;
+              // Clockwise from 12 o'clock, each criterion filling one quadrant:
+              // A top right, B bottom right, C bottom left, D top left.
+              const circleAngle = ((i + 0.5) / TOTAL_CARDS) * 360 - 90;
               const circleRad = (circleAngle * Math.PI) / 180;
               const circlePos = {
                 x: Math.cos(circleRad) * circleRadius,
@@ -438,38 +631,39 @@ function MeridianHeroAnimated({ height }: { height: string }) {
                 rotation: circleAngle + 90,
               };
 
-              const baseRadius = Math.min(containerSize.width, containerSize.height * 1.5);
-              const arcRadius = baseRadius * (isMobile ? 1.4 : 1.1);
-              const arcApexY = containerSize.height * (isMobile ? 0.35 : 0.25);
-              const arcCenterY = arcApexY + arcRadius;
-
-              const spreadAngle = isMobile ? 100 : 130;
-              const startAngle = -90 - spreadAngle / 2;
-              const step = spreadAngle / (TOTAL_CARDS - 1);
-
-              const scrollProgress = Math.min(Math.max(rotateValue / 360, 0), 1);
-              const boundedRotation = -scrollProgress * spreadAngle * 0.8;
-
-              const currentArcAngle = startAngle + i * step + boundedRotation;
+              // How many card-widths the arc has turned. Each card's place is wrapped
+              // into a window that starts just past the left edge of the screen, so a
+              // card leaving on the left comes back in on the right, out of sight.
+              const offset = ((((i - arcFocus + wrapLimit) % TOTAL_CARDS) + TOTAL_CARDS) % TOTAL_CARDS) - wrapLimit;
+              const currentArcAngle = -90 + offset * step;
               const arcRad = (currentArcAngle * Math.PI) / 180;
 
               const arcPos = {
                 x: Math.cos(arcRad) * arcRadius + parallaxValue,
                 y: Math.sin(arcRad) * arcRadius + arcCenterY,
                 rotation: currentArcAngle + 90,
-                scale: isMobile ? 1.4 : 1.8,
+                scale: arcScale,
               };
 
+              const morph = cardMorph(morphValue, i);
               target = {
-                x: lerp(circlePos.x, arcPos.x, morphValue),
-                y: lerp(circlePos.y, arcPos.y, morphValue),
-                rotation: lerp(circlePos.rotation, arcPos.rotation, morphValue),
-                scale: lerp(circleScale, arcPos.scale, morphValue),
+                x: lerp(circlePos.x, arcPos.x, morph),
+                y: lerp(circlePos.y, arcPos.y, morph),
+                rotation: lerpAngle(circlePos.rotation, arcPos.rotation, morph),
+                scale: lerp(circleScale, arcPos.scale, morph),
                 opacity: 1,
               };
             }
 
-            return <FlipCard key={strand.code} strand={strand} target={target} />;
+            return (
+              <FlipCard
+                key={strand.code}
+                strand={strand}
+                target={target}
+                index={i}
+                onPositionUpdate={handlePositionUpdate}
+              />
+            );
           })}
         </div>
       </div>
