@@ -167,7 +167,12 @@ interface FlipCardProps {
 }
 
 function FlipCard({ strand, target, index, onPositionUpdate }: FlipCardProps) {
-  const [isFlipped, setIsFlipped] = useState(false);
+  // A mouse flips the card while it hovers; touch and keyboard users, who have no
+  // hover, tap or press Enter to flip it and again to flip it back.
+  const [hovered, setHovered] = useState(false);
+  const [toggled, setToggled] = useState(false);
+  const isFlipped = hovered || toggled;
+  const lastPointer = useRef<string | null>(null);
   const { color, tint } = criterionTheme[strand.criterion];
 
   return (
@@ -187,6 +192,12 @@ function FlipCard({ strand, target, index, onPositionUpdate }: FlipCardProps) {
         onPositionUpdate(index, x, y);
       }}
       transition={{ type: "spring", stiffness: 40, damping: 15 }}
+      // On the wrapper, which never rotates in 3D, so the hover area can't shrink
+      // and flicker while the card is mid-flip.
+      onPointerEnter={(event) => {
+        if (event.pointerType === "mouse" || event.pointerType === "pen") setHovered(true);
+      }}
+      onPointerLeave={() => setHovered(false)}
       style={{
         position: "absolute",
         width: CARD_WIDTH,
@@ -199,12 +210,21 @@ function FlipCard({ strand, target, index, onPositionUpdate }: FlipCardProps) {
       {/* A real button, so the card is reachable and operable by keyboard. */}
       <motion.button
         type="button"
-        onClick={() => setIsFlipped((flipped) => !flipped)}
-        aria-pressed={isFlipped}
+        onPointerDown={(event) => {
+          lastPointer.current = event.pointerType;
+        }}
+        onClick={() => {
+          const pointer = lastPointer.current;
+          lastPointer.current = null;
+          // A mouse click does nothing: hovering already flipped the card.
+          if (pointer === "mouse" || pointer === "pen") return;
+          setToggled((value) => !value);
+        }}
+        aria-pressed={toggled}
         aria-label={
-          isFlipped
-            ? `${strand.code}, ${strand.name}. Tap to show the code again.`
-            : `${strand.code}. Tap to reveal what this strand is.`
+          toggled
+            ? `${strand.code}, ${strand.name}. Press to show the code again.`
+            : `${strand.code}. Hover or press to reveal what this strand is.`
         }
         className="relative block h-full w-full cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ink)]"
         style={{ transformStyle: "preserve-3d" }}
