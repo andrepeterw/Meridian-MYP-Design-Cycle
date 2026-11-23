@@ -12,7 +12,7 @@ export interface Reference {
 
 /**
  * Full APA 7th edition reference list. Order matches the brief (Sections 2.2-2.3):
- * Peter's original six sources, then the six added for this project.
+ * Peter's original six sources, then the six added for this project, then the hero page designer credit.
  */
 export const references: Reference[] = [
   {
@@ -92,6 +92,12 @@ export const references: Reference[] = [
     authorYear: "Rao & Meo, 2016",
     apa: "Rao, K., & Meo, G. (2016). Using Universal Design for Learning to design standards-based lessons. *SAGE Open*, *6*(4).",
     url: "https://doi.org/10.1177/2158244016680688",
+  },
+  {
+    id: "prashantsom75",
+    authorYear: "prashantsom75, n.d.",
+    apa: "prashantsom75. (n.d.). *Hero page designs* [Component designs]. 21st.dev.",
+    url: "https://21st.dev/@prashantsom75",
   },
   {
     id: "ritchhart2008",
